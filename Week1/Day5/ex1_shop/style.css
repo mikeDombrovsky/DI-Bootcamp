@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav {
+    background-color: rgb(53, 53, 53);
+    height: 60px;
+    text-align: right;
+    position: relative;
+}
+
+
+nav>a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav>a.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+nav>a.products_btn {
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+    background-color: rgb(53, 53, 53);
+    color: white;
+}
+
+nav>a:hover {
+    background-color: black;
+    transition: 0.5s;
+}
+body>i{
+    margin: 10px;
+    position: absolute;
+    right: 30px;
+}
+main.index_main {
+    text-align: center;
+    padding-top: 20%;
+    font-size: 48px;
+}
+
+footer {
+    height: 60px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+}

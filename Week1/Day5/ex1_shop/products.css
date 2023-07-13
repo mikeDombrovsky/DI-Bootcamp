@@ -1,0 +1,114 @@
+main {
+    padding: 20px;
+    font-size: 1.2em;
+    padding-bottom: 60px;
+}
+
+.card {
+    text-align: center;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.card:hover {
+    box-shadow: rgb(230, 230, 230) 1px 1px 10px;
+}
+
+.product_img {
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    height: 70%;
+    text-align: unset;
+    position: relative;
+}
+
+#bg_1 {
+    background-image: url("./assets/image1.png");
+}
+
+#bg_2 {
+    background-image: url("./assets/image2.png");
+}
+
+#bg_3 {
+    background-image: url("./assets/image3.png");
+}
+
+#bg_4 {
+    background-image: url("./assets/image4.png");
+}
+
+.new {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    display: inline-block;
+    background-color: green;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    padding-top: 15px;
+    border-radius: 50%;
+    margin-right: auto;
+}
+
+.discont {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    background-color: red;
+    font-size: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding-top: 15px;
+}
+
+div.desc {
+    position: relative;
+    height: 30%;
+}
+
+div.desc p,
+div.desc h5 {
+    margin: 20px 0;
+}
+
+.new_price {
+    color: green;
+    font-weight: bold;
+}
+
+.old_price {
+    color: #CCCCCC;
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.button {
+    position: absolute;
+    width: 180px;
+    right: 55px;
+    bottom: 30px;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px 20px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+}
+
+.button:hover {
+    box-shadow: 3px 3px;
+}
