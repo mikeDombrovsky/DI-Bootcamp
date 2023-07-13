@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section.wrapper, main, aside {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+section.wrapper {
+   height: 100vh;
+}
+
+main{
+    width: 70%;
+    height: inherit;
+    flex-direction: column;
+    padding: 10px;
+}
+
+aside {
+    width: 30%;
+    height: inherit;
+    flex-direction: column;
+    background-color: gainsboro;
+    padding: 10px;
+}
+
+aside img {
+    width: 80%;
+    border-radius: 50%;
+}
+aside a {
+    width: 30px;
+    height: 30px;
+}
+aside a#linkedin_icon {
+    background-image: url("./assets/linkedin.svg");
+}
+
+aside a#whatsapp_icon {
+    background-image: url("./assets/square-whatsapp.svg");
+}
+
+main > *, aside > * {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+main h3 {
+    text-align: left;
+}
+
+main> article {
+    width: 100%;
+}
+
+main > h1, p {
+    margin: 10px;
+}
+
+main div.ckills {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
