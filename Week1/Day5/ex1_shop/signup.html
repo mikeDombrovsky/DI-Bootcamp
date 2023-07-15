@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login-signup.css">
     <title>Shopping Website</title>
 </head>
 
@@ -16,7 +17,14 @@
         <a class="products_btn" href="./products.html">OUR PRODUCTS</a>
     </nav>
     <main>
-        signup inputs
+        <form class="reg_login_form" action="">
+            <input type="text" name="name" id="name" placeholder="Firstname">
+            <input type="text" name="lastname" id="lastname" placeholder="Lastname">
+            <input type="text" name="username" id="username" placeholder="Username">
+            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="password" name="password" id="password" placeholder="Password">
+            <input class="button" type="submit" value="SUBMIT">
+        </form>
     </main>
     <footer>
         <p>@copy 2023 Michael Dombrovski</p>
