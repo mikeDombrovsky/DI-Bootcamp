@@ -2,6 +2,7 @@ main {
     padding: 20px;
     font-size: 1.2em;
     padding-bottom: 60px;
+    text-align: center;
 }
 
 .card {
@@ -18,12 +19,12 @@ main {
     box-shadow: rgb(230, 230, 230) 1px 1px 10px;
 }
 
+
+
 .product_img {
     background-repeat: no-repeat;
-
     background-size: cover;
     height: 70%;
-    text-align: unset;
     position: relative;
 }
 
@@ -72,6 +73,63 @@ main {
     padding-top: 15px;
 }
 
+.hidden_icons {
+    display: none;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+.hidden_icons div i {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.card:hover .hidden_icons {
+    display: block;
+}
+
+.hidden_icons .icon_container {
+    display: inline-block;
+    position: relative;
+}
+
+.card .hidden_icons div.icon_container .pop-up {
+    display: none;
+    height: 25px;
+    width: 160%;
+    font-size: 12px;
+    background-color: #1d1d1d;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: -20px;
+}
+
+.card .hidden_icons i:hover {
+    background-color: rgba(0, 128, 0, 0.815);
+    color: #ffffff;
+}
+
+.card .hidden_icons div:hover .pop-up {
+    display: block;
+}
+
+
+.card .hidden_icons .eye i:hover::after {
+    content: "";
+    position: absolute;
+    top: -10%;
+    left: -5px;
+}
+
 div.desc {
     position: relative;
     height: 30%;
@@ -109,6 +167,15 @@ div.desc h5 {
     border-left: 1px solid #CCCCCC;
 }
 
-.button:hover {
-    box-shadow: 3px 3px;
+.card:hover .button {
+    color: white;
+    background-color: rgba(0, 128, 0, 0.815);
+}
+
+.card:hover .button:hover {
+    background-color: green;
+}
+
+.card:hover .button:active {
+    transform: scale(0.95);
 }
