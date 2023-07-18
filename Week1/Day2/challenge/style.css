@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Geologica', sans-serif;
+}
+
+header {
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+nav {
+    height: 70px;
+}
+
+nav img {
+    height: 60px;
+    width: 60px;
+    /* display: inline-block; */
+}
+
+ul {
+    height: 70px;
+}
+
+li {
+    list-style: none;
+    float: right;
+}
+
+#logo-li {
+    float: left;
+}
+
+li a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 25px;
+    background-color: rgb(43, 43, 43);
+    color: white;
+}
+
+li a:hover {
+    background-color: black;
+}
+
+section {
+    height: 80vh;
+    background-image: url("./assets/avengers_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
