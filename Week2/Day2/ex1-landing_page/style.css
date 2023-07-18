@@ -95,7 +95,8 @@ body header h1 {
     padding-top: 40px;
     color: #ffffff;
 }
-.card .pers_info p{
+
+.card .pers_info p {
     padding: 10px;
 }
 
@@ -124,7 +125,7 @@ body header h1 {
 }
 
 
-@media (max-width:376px) {
+@media (max-width:480px) {
 
     .numbers {
         display: flex;
