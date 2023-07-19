@@ -1,0 +1,75 @@
+ @import url('https://fonts.googleapis.com/css2?family=Geologica&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Geologica', sans-serif;
+ }
+
+ .container {
+     display: flex;
+     text-align: center;
+ }
+
+ .f-item {
+     width: 50%;
+ }
+
+ .login form {
+     width: 80%;
+     margin: 0 auto;
+     max-width: 350px;
+ }
+
+
+ .login form input {
+     width: 100%;
+     display: block;
+     margin: 10px 0;
+     background-color: #f3f3f3;
+     border: none;
+     padding: 10px;
+     /* max-width: 350px; */
+ }
+ .remember_forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .login form input.inline_checkbox {
+
+     display: inline-block;
+     width: fit-content;
+     color: #acabab;
+     font-size: 0.8em;
+ }
+
+ .login form label {
+     display: inline-block;
+     color: #acabab;
+     font-size: 0.8em;
+     margin: 10px 0;
+ }
+
+ .login form a {
+     display: inline-block;
+     width: 15vw;
+     text-decoration: none;
+     color: #acabab;
+     font-size: 0.8em;
+     margin: 10px 0 10px 5vw;
+     text-align: right;
+ }
+
+
+ .icons {
+     padding: 20px;
+ }
+
+ .icons a {
+     text-decoration: none;
+     color: #acabab;
+
+ }

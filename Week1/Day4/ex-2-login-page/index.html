@@ -11,40 +11,49 @@
 
 <body>
     <div class="container">
-        <div class="login">
+        <div class="f-item login">
             <h2>Log In</h2>
             <form action="">
-                <input type="email" name="email" id="email">
-                <input type="password" name="password" id="password">
-                <input type="checkbox" name="remember_me" id="remember_me">
-                <a href="">Forgot password?</a>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <div class="remember_forgot">
+                    <div>
+                        <input type="checkbox" name="remember_me" id="remember_me" class="inline_checkbox">
+                        <label for="remember_me">remember me</label>
+                    </div>
+
+                    <a href="">Forgot password?</a>
+                </div>
+
                 <input type="submit" value="LOG IN">
             </form>
             <div class="socials">
                 <div class="socials_heading">
-                    <span>
-                        <hr>
-                    </span>
+                    <hr class="inline_hr">
                     <span>Or Connect with</span>
-                    <span>
-                        <hr>
-                    </span>
+                    <hr class="inline_hr">
                 </div>
                 <div class="icons">
                     <a href="">
-                        <i class="fa-brands fa-github-alt"></i>
+                        <i class="fa-brands fa-facebook-f fa-2x"></i>
                     </a>
                     <a href="">
-                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter fa-2x"></i>
                     </a>
                     <a href="">
-                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-github-alt fa-2x"></i>
                     </a>
+                    <a href="">
+                        <i class="fa-brands fa-linkedin-in fa-2x"></i>
+                    </a>
+
                 </div>
             </div>
         </div>
-        <div class="register">
-
+        <div class="f-item register">
+            <h2>Hello, friend!</h2>
+            <h5>Enter your personal details and start journey with us</h5>
+            <a href="">REGISTER<i class="fa-solid fa-circle-arrow-right"></i></a>
         </div>
     </div>
 </body>
