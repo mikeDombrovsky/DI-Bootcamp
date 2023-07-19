@@ -10,7 +10,6 @@ aside {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 section.wrapper {
@@ -85,4 +84,5 @@ main div.ckills {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    text-align: left;
 }
