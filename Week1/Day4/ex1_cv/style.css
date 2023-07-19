@@ -4,22 +4,24 @@
     box-sizing: border-box;
 }
 
-section.wrapper, main, aside {
+section.wrapper,
+main,
+aside {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 section.wrapper {
-   height: 100vh;
+    height: 100vh;
 }
 
-main{
+main {
     width: 70%;
     height: inherit;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px;
 }
 
 aside {
@@ -27,26 +29,39 @@ aside {
     height: inherit;
     flex-direction: column;
     background-color: gainsboro;
-    padding: 10px;
+    padding: 30px;
 }
 
 aside img {
-    width: 80%;
+    width: 60%;
     border-radius: 50%;
 }
+
 aside a {
-    width: 30px;
-    height: 30px;
-}
-aside a#linkedin_icon {
-    background-image: url("./assets/linkedin.svg");
+    width: 42px;
+    height: 48px;
 }
 
-aside a#whatsapp_icon {
-    background-image: url("./assets/square-whatsapp.svg");
+
+aside a.icon {
+    text-decoration: none;
+    color: unset;
 }
 
-main > *, aside > * {
+aside a.linkedin_icon:hover i {
+    color: #0077B5;
+}
+
+aside a.github_icon:hover i {
+    color: #c9510c;
+}
+
+aside a.whatsapp_icon:hover i {
+    color: #25d366;
+}
+
+main>*,
+aside>* {
     margin: 10px 0;
     text-align: center;
     width: 100%;
@@ -56,11 +71,12 @@ main h3 {
     text-align: left;
 }
 
-main> article {
+main>article {
     width: 100%;
 }
 
-main > h1, p {
+main>h1,
+p {
     margin: 10px;
 }
 
