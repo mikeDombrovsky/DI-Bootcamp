@@ -36,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
  }
 
  .login form input.inline_checkbox {
@@ -55,12 +56,10 @@
 
  .login form a {
      display: inline-block;
-     width: 15vw;
      text-decoration: none;
      color: #acabab;
      font-size: 0.8em;
-     margin: 10px 0 10px 5vw;
-     text-align: right;
+   
  }
 
 
@@ -71,5 +70,5 @@
  .icons a {
      text-decoration: none;
      color: #acabab;
-
+    padding: 10px;
  }
