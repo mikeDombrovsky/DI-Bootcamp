@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    font-family: "Raleway";
+}
+
+.wrapper{
+  max-width: 800px;
+  margin: 0 auto;
+  height: inherit;
+}
+
+header {
+    height: 100vh;
+    background-image: url('./images/headerback.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hello_block{
+    background-color: white;
+    opacity: 80%;
+    padding: 15px;
+    border-radius: 20px;
+}
