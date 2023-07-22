@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <div class="me-auto">
                 <a href="" class="navbar-brand" href="#">Homo</a>
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                        <a href="#about" class="nav-link active" aria-current="page">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">portfolio</a>
+                        <a href="#portfolio" class="nav-link">portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Blog</a>
@@ -44,20 +44,67 @@
         </div>
     </nav>
     <header>
-        <div class="wrapper d-flex align-items-center">
-            <div class="hello_block">
-                <h1>Hello, Welcome to my official Website</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Cupiditate laudantium repudiandae consequuntur quo incidunt veniam
-                    illo dolor rem ea eligendi?
-                </p>
-                <button type="button" href="#" class="btn btn-primary">See more</button>
+        <div class="overlay">
+            <div class="wrapper d-flex align-items-center">
+                <div class="hello_block">
+                    <h1>Hello, Welcome to my official Website</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Cupiditate laudantium repudiandae consequuntur quo incidunt veniam
+                        illo dolor rem ea eligendi?
+                    </p>
+                    <button type="button" href="#" class="btn btn-primary">See more</button>
+                </div>
             </div>
         </div>
+
     </header>
-    <section>
-        about meee
+    <section class="about_me" id="about">
+        <div class="wrapper">
+            <h2>About Me</h2>
+            <div class="row">
+                <div class="col-4 about_me_left">
+                    <img src="./images/face4.jpg" alt="face">
+                    <span>Genius Developer</span>
+                </div>
+                <div class="col-8 about_me_text">
+                    <h3>Mr. Code</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quos, placeat consequuntur libero ipsum nemo earum
+                        exercitationem iure quaerat consequatur aliquid porro eos corrupti
+                        necessitatibus reiciendis, recusandae hic eveniet? Ducimus, quas!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="wrapper">
+            <h2>Portfolio</h2>
+            <div class="row">
+                <div class="col">
+                   <img src="./images/portfolio/port1.png" alt="">
+                </div>
+                <div class="col">
+                    <img src="./images/portfolio/port3.png" alt="">
+                </div>
+                <div class="col">
+                    <img src="./images/portfolio/port6.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="./images/portfolio/port7.png" alt="">
+                </div>
+                <div class="col">
+                    <img src="./images/portfolio/port8.png" alt="">
+                </div>
+                <div class="col">
+                    <img src="./images/portfolio/port11.png" alt="">
+                </div>
+            </div>
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
