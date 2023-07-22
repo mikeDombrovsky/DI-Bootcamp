@@ -23,6 +23,10 @@ a {
     height: inherit;
 }
 
+body {
+    background-color: #fdfcfc;
+}
+
 header {
     height: 100vh;
     background-image: url('./images/headerback.jpg');
@@ -47,24 +51,24 @@ header {
     border-radius: 20px;
 }
 
-section.about_me{
+section.about_me {
     height: 70vh;
 }
 
-section h2{
+section h2 {
     text-align: center;
     margin: 2em;
     color: #0d6efd;
 }
 
-section.about_me .about_me_left{
+section.about_me .about_me_left {
     text-align: center;
 }
 
 section.about_me .about_me_left img {
-   width: 100%;
-   border-radius: 50%;
-   margin-bottom: 0.5em;
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 0.5em;
 }
 
 section.about_me .about_me_text {
@@ -76,13 +80,15 @@ section.about_me .about_me_text h3 {
     color: rgb(236, 187, 122);
 }
 
-section.portfolio .col{
-    height: 25vh;
-    margin: 0.5em;
+section.portfolio .img_col {
+    padding: 1em;
+    
+    overflow: hidden;
 }
 
 section.portfolio img {
+    height: 25vh;
     width: 100%;
-    height: inherit;
     object-fit: cover;
+    border: 1px solid rgb(236, 187, 122);
 }
