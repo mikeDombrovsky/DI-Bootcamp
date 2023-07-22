@@ -45,14 +45,12 @@ header {
 }
 
 .hello_block {
-    background-color: white;
-    opacity: 80%;
     padding: 15px;
     border-radius: 20px;
 }
 
 section.about_me {
-    height: 70vh;
+    min-height: 70vh;
 }
 
 section h2 {
@@ -82,8 +80,8 @@ section.about_me .about_me_text h3 {
 
 section.portfolio .img_col {
     padding: 1em;
-    
     overflow: hidden;
+    transition: 0.5s;
 }
 
 section.portfolio img {
@@ -91,4 +89,23 @@ section.portfolio img {
     width: 100%;
     object-fit: cover;
     border: 1px solid rgb(236, 187, 122);
+}
+
+section.portfolio .img_col:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+section.blog .card img {
+    height: 25vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+section.contacts .icons{
+    text-align: center;
+}
+
+section.contacts i{
+    font-size: 3em;
 }
