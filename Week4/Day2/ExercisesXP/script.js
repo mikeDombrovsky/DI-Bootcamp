@@ -47,7 +47,7 @@ function calculateTip() {
     }
 }
 //     Console.log the tip amount and the final bill(bill + tip).
-// calculateTip();
+calculateTip();
 
 //  Exercise 3 : Find The Numbers Divisible By 23
 // Create a function call isDivisible() that takes no parameter.
@@ -68,11 +68,11 @@ function isDivisible(divisor = 23) {
 // 391 414 437 460 483
 // Sum: 5313
 
-// isDivisible();
+isDivisible();
 
 // Bonus: Add a parameter divisor to the function.
 
-// isDivisible(45);
+isDivisible(45);
 
 //  Exercise 4 : Shopping List
 const stock = {
@@ -109,8 +109,8 @@ function myBill() {
     return totalPrice;
 }
 
-// console.log(myBill());
-// console.log(stock);
+console.log(myBill());
+console.log(stock);
 
 //Exercise 5 : What’s In My Wallet ?
 // Create a function named changeEnough(itemPrice, amountOfChange) that receives two arguments:
@@ -128,21 +128,14 @@ function changeEnough(itemPrice, amountOfChange) {
     return false;
 }
 
-// console.log(changeEnough(14.11, [2, 100, 0, 0]));
-// console.log(changeEnough(0.75, [0, 0, 20, 5]));
+console.log(changeEnough(14.11, [2, 100, 0, 0]));
+console.log(changeEnough(0.75, [0, 0, 20, 5]));
 
 // Exercise 6 : Vacations Costs
 //Define a function called hotelCost()
-function hotelCost() {
-    let number_of_nights;
-    do {
-        number_of_nights = prompt("How many nights would you like to stay in the hotel?");
-    } while (number_of_nights == "" || number_of_nights == null || isNaN(number_of_nights))
-
+function hotelCost(number_of_nights) {
     return 140 * number_of_nights;
 }
-
-// console.log(hotelCost());
 
 // Define a function called planeRideCost().
 // It should ask the user for their destination.
@@ -151,11 +144,8 @@ function hotelCost() {
 // “London”: 183$
 // “Paris” : 220$
 // All other destination: 300$
-function planeRideCost() {
-    let destination;
-    do {
-        destination = prompt("What is your destination?");
-    } while (destination == null || !isNaN(destination))
+function planeRideCost(destination) {
+   
     if (destination == "London") {
         return 183;
     }
@@ -166,29 +156,39 @@ function planeRideCost() {
     }
 }
 
-// planeRideCost();
-
 // Define a function called rentalCarCost().
 // It should ask the user for the number of days they would like to rent the car.
 // If the user doesn’t answer or if the answer is not a number, ask again.
 // Calculate the cost to rent the car.The car costs $40 everyday.
 // If the user rents a car for more than 10 days, they get a 5 % discount.
 // The function should return the total price of the car rental.
-function rentalCarCost() {
-    let days;
-    do {
-        days = prompt("How many days would you like to rent the car?");
-    } while (days === null || isNaN(days))
+function rentalCarCost(days) {
     let sum = 40 * days;
     if (days > 10) {
         return sum - sum * 0.05;
     }
     return sum;
 }
-// console.log(rentalCarCost());
+
 
 function totalVacationCost(){
-    return hotelCost() + planeRideCost() + rentalCarCost();
+    let number_of_nights;
+    do {
+        number_of_nights = prompt("How many nights would you like to stay in the hotel?");
+    } while (number_of_nights == "" || number_of_nights == null || isNaN(number_of_nights))
+
+    let destination;
+    do {
+        destination = prompt("What is your destination?");
+    } while (destination == null || !isNaN(destination))
+
+    let days;
+    do {
+        days = prompt("How many days would you like to rent the car?");
+    } while (days === null || isNaN(days))
+
+
+    return hotelCost(number_of_nights) + planeRideCost(destination) + rentalCarCost(days);
 }
 
 console.log(totalVacationCost());
