@@ -18,7 +18,7 @@ console.log(people.indexOf("Mary"));// 0
 // Hint: remember that now the people array should look like this const people = ["Mary", "Devon", "Jason", "Yourname"];
 // Hint: Check out the documentation for the slice method
 let people_copy = people.slice(1, -1);
-console.log(people_copy);// ['Mary', 'Devon', 'Jason']
+console.log(people_copy);// [ 'Devon', 'Jason']
 // Write code that gives the index of “Foo”. Why does it return -1 ?
 people.indexOf("foo");// -1 means that foo doesn't exist in this array
 // Create a variable called last which value is the last element of the array.
@@ -139,7 +139,7 @@ const details = {
 //Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
 let sentence = "";
 for(let k in details){
-    sentence = `${k} ${details[k]}`;
+    sentence += `${k} ${details[k]} `;
 }
 console.log(sentence.trim());
 
