@@ -137,9 +137,11 @@ const details = {
     the: 'raindeer'
 }
 //Given the object above and using a for loop, console.log “my name is Rudolf the raindeer”
-for( k in details){
-    console.log(`${k} ${details[k]}`);
+let sentence = "";
+for(let k in details){
+    sentence = `${k} ${details[k]}`;
 }
+console.log(sentence.trim());
 
 // Exercise 7 : Secret Group
 const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
