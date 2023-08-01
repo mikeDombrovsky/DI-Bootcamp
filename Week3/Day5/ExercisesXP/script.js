@@ -17,7 +17,7 @@ console.log(people.indexOf("Mary"));// 0
 // The copy should NOT include “Mary” or your name.
 // Hint: remember that now the people array should look like this const people = ["Mary", "Devon", "Jason", "Yourname"];
 // Hint: Check out the documentation for the slice method
-let people_copy = people.slice(0, -1);
+let people_copy = people.slice(1, -1);
 console.log(people_copy);// ['Mary', 'Devon', 'Jason']
 // Write code that gives the index of “Foo”. Why does it return -1 ?
 people.indexOf("foo");// -1 means that foo doesn't exist in this array
