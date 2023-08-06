@@ -1,0 +1,31 @@
+.mercury {
+    background-color: rgb(255, 81, 0);
+}
+
+.venus {
+    background-color: rgb(148, 47, 0);
+}
+
+.earth {
+    background-color: rgb(0, 132, 255);
+}
+
+.mars {
+    background-color: rgb(245, 51, 44);
+}
+
+.jupiter {
+    background-color: rgb(126, 173, 98);
+}
+
+.saturn {
+    background-color: rgba(223, 127, 83, 0.74);
+}
+
+.uranus {
+    background-color: rgb(151, 179, 255);
+}
+
+.neptune {
+    background-color: rgb(198, 216, 248);
+}
