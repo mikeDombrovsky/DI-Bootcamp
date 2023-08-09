@@ -21,7 +21,6 @@ function bottlesOfBeerSong(n) {
         Take ${takenBottles} down, pass ${pronoun} around,`);
         if (i - takenBottles < 2) {
             bottles = "bottle";
-            console.log("boo");
         }
         console.log(`${i - takenBottles} ${bottles} of beer on the wall`);
     }
