@@ -12,6 +12,7 @@ function bottlesOfBeerSong(n) {
             pronoun = "it";
             bottles = "bottle";
         }
+
         if (i < takenBottles) {
             takenBottles = i;
         }
@@ -23,6 +24,5 @@ function bottlesOfBeerSong(n) {
             console.log("boo");
         }
         console.log(`${i - takenBottles} ${bottles} of beer on the wall`);
-        console.log(i, takenBottles);
     }
 }
