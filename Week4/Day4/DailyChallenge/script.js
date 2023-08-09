@@ -5,14 +5,21 @@ bottlesOfBeerSong(n);
 
 function bottlesOfBeerSong(n) {
     let pronoun = "them";
-    for (let i = n; i > 0; i--) {
-        if(i == 1){
+    let bottles = "bottles";
+    let takenBottles = 1;
+    for (let i = n; i > 0; i -= takenBottles++) {
+        if (i == 1) {
             pronoun = "it";
+            bottles = "bottle";
         }
-        console.log(`${i} bottles of beer on the wall,
-        ${i} bottles of beer,
-        Take 1 down, pass ${pronoun} around,
-        ${i - 1} bottles of beer on the wall`);
+        if(i < takenBottles){
+            takenBottles = i;
+        }
+        console.log(`${i} ${bottles} of beer on the wall,
+        ${i} ${bottles} of beer,
+        Take ${takenBottles} down, pass ${pronoun} around,
+        ${i - takenBottles} bottles of beer on the wall`);
+        console.log(i, takenBottles);
     }
     console.log("no bottle of beer on the wall");
 }

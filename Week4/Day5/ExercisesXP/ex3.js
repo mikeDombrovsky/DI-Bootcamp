@@ -12,7 +12,7 @@ let newTextNode = document.createTextNode("Logout");
 
 
 // Append the text node to the newly created list node(<li>).
-new_li.append(newTextNode);
+new_li.appendChild(newTextNode);
 
 // Finally, append this updated list node to the unordered list (<ul>), using the appendChild method.
 let ul = document.querySelector("ul");
