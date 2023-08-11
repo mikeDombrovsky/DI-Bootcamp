@@ -32,7 +32,7 @@ button {
 
 main {
     display: grid;
-    grid-template-columns: repeat(100, 1fr);
+    grid-template-columns: repeat(50, 1fr);
     row-gap: 1px;
     column-gap: 1px;
     padding: 3px;

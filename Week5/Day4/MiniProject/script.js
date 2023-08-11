@@ -26,7 +26,6 @@ function addEventListenersToCells() {
 
 function getColor(e) {
     currentColor = e.target.style.backgroundColor;
-    console.log(currentColor);
 }
 
 function setColor(e) {
@@ -40,22 +39,18 @@ function setColorOver(e) {
     }
 }
 
-function stopColor(e) {
+function stopColor() {
     isMouseDown = false;
-    console.log(isMouseDown);
 }
 
-
-
 function fillField() {
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 1600; i++) {
         let div = document.createElement("div");
         div.style.backgroundColor = "white";
 
         field.appendChild(div);
     }
 }
-
 
 function clearField() {
     for (let cell of cells) {
