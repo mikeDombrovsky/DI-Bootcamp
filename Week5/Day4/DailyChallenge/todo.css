@@ -14,13 +14,16 @@ main {
     background-color: white;
 }
 
-
 .new_task_form>#submit_input {
     color: lightblue;
     font-weight: 600;
 }
 
-.new_task_form>#new_task_input:focus {
+.new_task_form>#submit_input:hover {
+    color: rgb(65, 192, 235);
+}
+
+.new_task_form>input:focus {
     outline: none;
 }
 
@@ -30,7 +33,12 @@ main {
 
 #clear_btn{
     padding: 15px;
-    color: red;
+    color: rgb(253, 132, 132);
     text-decoration: none;
     cursor: pointer;
+    font-weight: 600;
+}
+#clear_btn:hover{
+    color: rgb(252, 0, 0);
+    transition: 0.2s;
 }

@@ -23,7 +23,7 @@ function addTask(e) {
 
         newItem.style.borderBottom = "1px solid lightblue";
         newItem.innerHTML = `
-        <button class="btn btn-danger btn-sm me-1" onclick="deleteElem(event)"><i style="pointer-events: none" class="fa-solid fa-x fa-2xs"></i></button>
+        <button class="btn btn-danger btn-sm me-2" onclick="deleteElem(event)"><i style="pointer-events: none" class="fa-solid fa-x fa-2xs"></i></button>
         <input class="me-1" onChange="doneTask(event)" type="checkbox" name="checlbox" id="checkbox">
         <label name="checkbox">${value}</label>
         `;
