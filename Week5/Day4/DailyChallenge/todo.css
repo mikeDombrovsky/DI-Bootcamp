@@ -1,0 +1,36 @@
+main {
+    background-color: red;
+    color: white;
+}
+
+.new_task_form {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.new_task_form>input {
+    border: none;
+    background-color: white;
+}
+
+
+.new_task_form>#submit_input {
+    color: lightblue;
+    font-weight: 600;
+}
+
+.new_task_form>#new_task_input:focus {
+    outline: none;
+}
+
+.tasks_container{
+    border-radius: 5px;
+}
+
+#clear_btn{
+    padding: 15px;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
