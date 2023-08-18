@@ -1,5 +1,4 @@
-
-
+//add listeners to nav btns for active status
 const main_btns_container = document.querySelector("#navbarSupportedContent>ul");
 const main_btns = main_btns_container.querySelectorAll("li.nav-item>a");
 
@@ -31,17 +30,16 @@ function setBtnAsActive() {
     prevActiveBtn.classList.remove("active");
     this.classList.add("active");
 }
-
+//filter function to show projects by type
 function filter(e, class_name) {
     e.preventDefault();
     console.log("filter " + class_name);
     const projects = portfolio.querySelectorAll("div.img_col");
     for (const project of projects) {
         if (project.classList.contains(class_name)) {
-            project.style.display = "block";;
+            project.style.display = "block";
         } else {
             project.style.display = "none";
         }
-
     }
 }
