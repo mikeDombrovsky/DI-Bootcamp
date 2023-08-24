@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+body {
+    background-color: rgb(157, 180, 245);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+div.container {
+    min-height: 60vh;
+    width: 70vw;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 5px;
+}
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+
+q {
+    quotes: '\201C' '\201E';
+    font-size: 3rem;
+}
+
+#quote_text {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+#author {
+    display: flex;
+    justify-content: end;
+    color: rgb(77, 77, 248);
+    font-size: 1.5rem;
+    margin-right: 30px;
+}
+
+button {
+    padding: 10px;
+    font-size: 1.3rem;
+    background-color: rgb(129, 158, 238);
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(109, 142, 226);
+}
+
+button:active {
+    background-color: rgb(84, 128, 240);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+form input,
+form textarea {
+    caret-color: auto;
+    outline: none;
+    border: 1px solid #dfdfdf;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons button {
+    margin: 5px 0;
+    width: fit-content;
+
+}
+
+.buttons button span {
+    padding: 3px 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    background-color: rgb(84, 128, 240);
+    color: white;
+}
