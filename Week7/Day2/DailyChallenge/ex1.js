@@ -27,10 +27,20 @@ const gameInfo = [
 
 //Create an array using forEach that contains all the usernames from the gameInfo array, add an exclamation point (ie. “!”) to the end of every username.
 //The new array should look like this : const usernames = ["john!", "becky!", "susy!", "tyson!"]
-
 const usernames = [];
-gameInfo.forEach()
-for (obj of gameInfo){
-    usernames.push(`${obj.username}!`);
-}
+gameInfo.forEach(obj => usernames.push(`${obj.username}!`));
+console.log(usernames);
+//Create an array using forEach that contains the usernames of all players with a score bigger than 5.
+//The new array should look like this : const winners = ["becky", "susy"]
+const winners = [];
+gameInfo.forEach(obj => {
+    if (obj.score > 5) {
+        winners.push(`${obj.username}`);
+    }
+});
+console.log(winners);
 
+//3. Find and display the total score of the users. (Hint: The total score is 71)
+let totalScore = 0;
+gameInfo.forEach(obj => totalScore += obj.score);
+console.log(totalScore);
