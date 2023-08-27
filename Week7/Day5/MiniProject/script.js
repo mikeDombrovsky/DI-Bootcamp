@@ -98,13 +98,27 @@ const funnyQuotes = [
         id: 20,
         author: "Will Rogers",
         quote: "I don't make jokes. I just watch the government and report the facts."
-    }
+    },
+    {
+        id: 21,
+        author: "Albert Einstein",
+        quote: "Suck my duck, stupid!"
+    },
+    {
+        id: 22,
+        author: "Albert Einstein",
+        quote: "I wanna pee!!"
+    },
 ];
 const quote_p = document.querySelector('p#quote_text');
 const author_div = document.querySelector('div#author');
 let prevQuoteId = 1;
 const new_quote_form = document.forms[0];
 
+const quotes_container = document.querySelector('#quotes_container');
+const input_search = document.querySelector('#input_search');
+let quotes_by_author = [];
+let current_quote_Index = 0;
 generate();
 addLikesToObjects();
 
@@ -126,8 +140,7 @@ function getRandomeQuoteId() {
     return randomId;
 }
 
-function addQuote(e) {
-    e.preventDefault();
+function addQuote() {
     const input_quote = new_quote_form.input_quote;
     const input_author = new_quote_form.input_author;
     if (input_quote.value == '' || input_author.value == '') {
@@ -136,10 +149,13 @@ function addQuote(e) {
     const obj = {
         id: funnyQuotes.length + 1,
         author: input_author.value,
-        quote: input_quote.value
+        quote: input_quote.value,
+        likes: 0
     }
     funnyQuotes.push(obj);
     console.log(obj);
+    input_quote.value = '';
+    input_author.value = '';
 }
 
 function addLikesToObjects() {
@@ -156,7 +172,7 @@ function countAllChars() {
     span.innerHTML = count;
 }
 
-function getCurrentObject(){
+function getCurrentObject() {
     return funnyQuotes.find(obj => obj.id === prevQuoteId);
 }
 
@@ -168,7 +184,7 @@ function countChars(quote) {
     return count;
 }
 
-function countWithoutSpaces(){
+function countWithoutSpaces() {
     let currentObj = getCurrentObject();
     let quote = currentObj.quote;
     let count = countChars(deleteWhitespaces(quote));
@@ -176,11 +192,11 @@ function countWithoutSpaces(){
     span.innerHTML = count;
 }
 
-function deleteWhitespaces(quote){
+function deleteWhitespaces(quote) {
     return quote.split(' ').join('');
 }
 
-function countWords(){
+function countWords() {
     let currentObj = getCurrentObject();
     let quote = currentObj.quote;
     let count = quote.split(' ').length;
@@ -188,14 +204,68 @@ function countWords(){
     span.innerHTML = count;
 }
 
-function addLike(){
+function addLike() {
     let currentObj = getCurrentObject();
     currentObj.likes++;
     const span = document.querySelector('button#add_like>span');
     span.innerHTML = currentObj.likes;
 }
 
-function resetCounters(){
+function resetCounters() {
     const spans = document.querySelectorAll('.buttons button span');
     spans.forEach(span => span.innerHTML = "0");
+}
+
+function search() {
+    quotes_container.innerHTML = '';
+    let author = input_search.value;
+    quotes_by_author = funnyQuotes.filter(obj => obj.author.startsWith(author));
+    console.log(quotes_by_author);
+    for (let obj of quotes_by_author) {
+        let newQuote = prepareQuote(obj);
+        quotes_container.appendChild(newQuote);
+        break;
+    }
+    console.log(quotes_by_author);
+}
+
+function prev() {
+    if (current_quote_Index > 0) {
+        addNewSearchQuote(--current_quote_Index);
+    }
+}
+
+function next() {
+    if (current_quote_Index < quotes_by_author.length - 1) {
+        addNewSearchQuote(++current_quote_Index);
+    }
+}
+
+function addNewSearchQuote(i) {
+    const obj = getAuthorQuoteByIndex(i);
+
+    if (obj) {
+        quotes_container.innerHTML = '';
+        let newQuote = prepareQuote(obj);
+        quotes_container.appendChild(newQuote);
+    }
+}
+
+function prepareQuote(obj) {
+    let newQuote = document.createElement('div');
+    newQuote.setAttribute('id', obj.id);
+    newQuote.classList.add('quote');
+    newQuote.innerHTML = `
+                <q>
+                    <p class="quote_text">${obj.quote}</p>
+                </q>
+                <div class="author">${obj.author}</div>`;
+    return newQuote;
+}
+
+function getAuthorQuoteByIndex(i) {
+    if (i >= 0 && i < quotes_by_author.length) {
+        return quotes_by_author[i];
+    }
+    return false;
 }

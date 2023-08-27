@@ -11,12 +11,11 @@ body {
 
 section {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 div.container {
+    margin-top: 40px;
     min-height: 60vh;
     width: 70vw;
     background-color: white;
@@ -41,12 +40,12 @@ q {
     font-size: 3rem;
 }
 
-#quote_text {
+.quote_text {
     display: inline-block;
     font-size: 1.2rem;
 }
 
-#author {
+.author {
     display: flex;
     justify-content: end;
     color: rgb(77, 77, 248);
@@ -77,8 +76,8 @@ form {
     padding: 10px 0;
 }
 
-form input,
-form textarea {
+input,
+textarea {
     caret-color: auto;
     outline: none;
     border: 1px solid #dfdfdf;
@@ -105,4 +104,25 @@ form textarea {
     border-radius: 3px;
     background-color: rgb(84, 128, 240);
     color: white;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search>button {
+    margin: 5px 0;
+}
+
+.search>p>span {
+    width: 5px;
+}
+
+.prev_next {
+    display: flex;
+}
+
+.prev_next button {
+    flex-grow: 1;
 }

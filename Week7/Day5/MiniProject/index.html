@@ -13,16 +13,16 @@
         <div class="container">
             <div class="quote">
                 <q>
-                    <p id="quote_text">Quote quotski</p>
+                    <p id="quote_text" class="quote_text">Quote quotski</p>
                 </q>
-                <div id="author">Author Authorovich</div>
+                <div id="author" class="author">Author Authorovich</div>
             </div>
             <button onclick="generate()">Generate Quote</button>
-            <form action="">
+            <form action="" id="add_form">
                 <textarea id="input_quote" name="input_quote" rows="4" placeholder="add quote" cols="50"
                     required></textarea>
-                <input type="text" name="quote" id="input_author" placeholder="add author name">
-                <button onclick="addQuote(event)">Add New Quote</button>
+                <input type="text" name="quote" id="input_author" placeholder="add author name" required>
+                <button onclick="addQuote()">Add New Quote</button>
             </form>
             <div class="buttons">
                 <button id="count_all" onclick="countAllChars()">Count all chars<span>0</span></button>
@@ -32,11 +32,16 @@
                 <button id="add_like" onclick="addLike()">Add like and show likes<span>0</span></button>
             </div>
             <div class="search">
-                <form action="">
-                    <input type="text" name="search" id="search">
-                    <button>Search Quote</button>
-                    <div id="quotes_container"></div>
-                </form>
+                <!-- <form action="" id="search_form"> -->
+                <input type="search" name="search" id="input_search" placeholder="add author name">
+                <button onclick="search()">Search Quote</button>
+                <!-- </form> -->
+                <div id="quotes_container"></div>
+                <p class="prev_next">
+                    <button onclick="prev()">PREV</button>
+                    <span></span>
+                    <button onclick="next()">NEXT</button>
+                </p>
             </div>
         </div>
     </section>
