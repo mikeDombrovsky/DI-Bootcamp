@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Special To Do List</title>
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="text" name="f_name" id="f_name" placeholder="Name" required>
+            <input type="text" name="desc" id="desc" placeholder="description">
+            <input type="datetime-local" name="start" id="start" required>
+            <input type="datetime-local" name="end" id="end" required>
+            <input type="submit" onsubmit="saveTask(event)" value="Submit">
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
