@@ -25,7 +25,13 @@ const the_truman_show = new Video('The Truman Show', 'Jim Carrey', 103 * 60);
 
 //Bonus: Use an array to store data for five Video instances (ie. title, uploader, time)
 //Think of the best data structure to save this information within the array.
-const videos_arr = [the_mask, the_truman_show];
+const videos_arr = [
+    the_mask, 
+    the_truman_show, 
+    new Video('Liar Liar', 'Jim Carrey', 86 * 60),
+    new Video('Yes Man', 'Jim Carrey', 104 * 60),
+    new Video('Dumb and Dumber', 'Jim Carrey', 106 * 60)
+];
 
 // Bonus: Loop through the array to instantiate those instances.
 for(movie of videos_arr){
