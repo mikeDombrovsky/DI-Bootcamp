@@ -76,21 +76,23 @@ const input_search = document.querySelector('input#search');
 
 showCards(robots);
 
-input_search.addEventListener('input', filterAndShow)
+input_search.addEventListener('input', filterAndShow);
 
 function filterAndShow(e) {
     const searched = e.target.value.toLowerCase();
 
-    const filtered = robots.filter(({name, username}) => {
+    const filtered = robots.filter(({ name, username }) => {
         name = name.toLowerCase();
         username = username.toLowerCase();
-        return (name.includes(searched) || username.includes(searched));
+        return name.includes(searched) || username.includes(searched);
     });
+
     showCards(filtered);
 }
 
 function showCards(robots) {
     cards.innerHTML = '';
+
     robots.forEach(({ name, email, image }) => {
         const card = document.createElement('div');
         card.classList.add('card');
