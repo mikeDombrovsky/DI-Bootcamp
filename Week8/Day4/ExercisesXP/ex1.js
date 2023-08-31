@@ -18,7 +18,8 @@ console.log(`I am ${name} from ${city}, ${country}. Latitude(${lat}), Longitude(
 //output : 'Your full name is Elie Schoppik'
 function displayStudentInfo(objUser) {
     //destructuring
-    log
+    const {first, last} = objUser;
+    console.log(`Your full name is ${first} ${last}`);
 }
 
 displayStudentInfo({ first: 'Elie', last: 'Schoppik' });
