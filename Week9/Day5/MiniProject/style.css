@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(180, 180, 255);
+    text-align: center;
+    padding: 20px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card{
+    text-align: left;
+    display: inline-block;
+    min-width: 200px;
+    height: fit-content;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.country{
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(180, 180, 255);
+}
+
+.celsius{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(180, 180, 255);
+    margin: 10px 0;
+}
+
+.error_container{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 200px;
+    height: 200px;
+    padding: 25px;
+    background-color: #f44336;
+    color: white;
+    font-size: 25px;
+}
+
+.error{
+    margin: 10px;
+}
+
+.remove{
+    position: absolute;
+    font-size: 30px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.remove:hover{
+   color: #f5a19b;
+   transition: 0.5s;
+}
+
+.remove:active {
+    color: #a80b00;
+}
+
+.none{
+    display: none;
+}
+
+/* temp format toggle elem*/
+.toggle-button-cover {
+    position: relative;
+}
+
+.button-cover {
+    height: 100px;
+    width: 100vw;
+}
+
+.button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover,
+.knobs,
+.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+    border-radius: 100px;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/* Button 1 */
+#button-1 .knobs:before {
+    content: "\2103";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked+.knobs:before {
+    content: "\2109";
+    left: 42px;
+    background-color: #f44336;
+}
+
+#button-1 .checkbox:checked~.layer {
+    background-color: #fcebeb;
+}
+
+#button-1 .knobs,
+#button-1 .knobs:before,
+#button-1 .layer {
+    transition: 0.3s ease all;
+}
