@@ -14,7 +14,7 @@ testFormatDate();
 
 function formatDate(date) {
     return ''.concat(date.getFullYear())
-        .concat(formatNum(formatMonth(date.getMonth())))
+        .concat(formatMonth(date.getMonth()))
         .concat(formatNum(date.getDate()))
         .concat(formatNum(date.getHours()))
         .concat(formatNum(date.getMinutes()))
@@ -22,8 +22,7 @@ function formatDate(date) {
 }
 
 function formatMonth(num) {
-    num++;
-    return formatNum(num);
+    return formatNum(++num);
 }
 
 function formatNum(num) {
