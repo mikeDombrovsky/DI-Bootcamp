@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+body {
+    background-image: url('./img/b8b.jpg');
+    background-size: contain;
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    font-size: 1.1em;
+    color: gray;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+form * {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+label,
+h1 {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+input,
+select {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    outline-style: none;
+    caret-color: lightgray;
+    text-align: center;
+    margin: 15px 0;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: gray;
+}
+
+
+form div#div_img {
+    display: flex;
+    justify-content: center;
+}
+
+form img {
+    width: 50px;
+    display: block;
+    cursor: pointer;
+}
+
+form img:hover {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+div#result {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: gray;
+}

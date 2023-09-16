@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Currency Converter</title>
 </head>
 
@@ -12,20 +13,19 @@
         <form action="">
             <h1>Currency Converter</h1>
             <label for="from">From:</label>
-            <select name="from" id="select_from">
-                <!-- <option value=""></option> -->
-            </select>
-
+            <select name="from" id="select_from"></select>
+            <div id="div_img">
+                <img id="switch" src="./img/arrows.png" alt="arrows">
+            </div>
             <label for="to">To:</label>
-            <select name="to" id="select_to">
-                <!-- <option value=""></option> -->
-            </select>
+            <select name="to" id="select_to"></select>
 
             <label for="amount">Amount:</label>
             <input type="number" name="amount" id="amount" value="1">
-            <input type="submit" value="Convert">
+            <input type="submit" value="Convert"> 
+            <div id="result"></div>
         </form>
-        <div id="result"></div>
+       
     </main>
     <script src="script.js"></script>
 </body>
