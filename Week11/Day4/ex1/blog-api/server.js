@@ -37,8 +37,12 @@ app.get('/posts/:id', (req, res) => {
 
 app.post('/posts', (req, res) => {
     if (req.body.title && req.body.content) {
+        let id = 1;
+        if(data.length > 0){ 
+            id = data[data.length - 1].id + 1;
+        }
         const post = {
-            id: data[data.length - 1].id + 1,
+            id,
             title: req.body.title,
             content: req.body.content
         }
