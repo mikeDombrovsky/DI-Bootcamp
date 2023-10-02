@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         } else {
             res.status(500).json({ error: 'error during reading json file' });
         }
-    });
+    }).catch(err => console.log(err));
 });
 
 router.get('/:id', async (req, res) => {
