@@ -29,14 +29,16 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const { title, content } = req.body;
+    const new_task = { title, content };
     const tasks = await getTasks();
 
-    if (new_task && new_task.title && new_task.content) {
+    if (title && content) {
         const id = tasks.length > 0 ?
             tasks.slice(-1).id + 1
             : 1;
 
-        tasks.push({ id, title, content });
+        new_task.id = id;
+        tasks.push(new_task);
         const success = await setTasks(tasks);
 
         if (success) {
@@ -44,6 +46,8 @@ router.post('/', async (req, res) => {
         } else {
             res.status(500).json({ error: 'error during writing json file' });
         }
+    } else {
+        res.status(400).json({ error: 'wrong body parameters' });
     }
 });
 
@@ -64,6 +68,10 @@ router.put('/:id', async (req, res) => {
         } else {
             res.status(500).json({ error: 'error during writing json file' });
         }
+    } else if (!task) {
+        res.status(404).json({ error: 'task not found' });
+    } else {
+        res.status(400).json({ error: 'wrong body parameters' });
     }
 });
 
