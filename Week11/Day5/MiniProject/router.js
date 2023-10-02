@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
             console.log(tasks);
             res.json(tasks);
         } else {
-            res.status(500).json({ error: 'error during reading json file' })
+            res.status(500).json({ error: 'error during reading json file' });
         }
     });
 });
@@ -36,13 +36,13 @@ router.post('/', async (req, res) => {
             tasks.slice(-1).id + 1
             : 1;
 
-        tasks.push({id, title, content});
+        tasks.push({ id, title, content });
         const success = await setTasks(tasks);
 
         if (success) {
             res.status(201).json({ added: new_task });
         } else {
-            res.status(500).json({ error: 'error during writing json file' })
+            res.status(500).json({ error: 'error during writing json file' });
         }
     }
 });
@@ -62,12 +62,31 @@ router.put('/:id', async (req, res) => {
         if (success) {
             res.status(201).json({ updated: task });
         } else {
-            res.status(500).json({ error: 'error during writing json file' })
+            res.status(500).json({ error: 'error during writing json file' });
         }
     }
-
-
 });
+
+router.delete('/:id', async (req, res) => {
+    const id = Number(req.params.id);
+    const tasks = await getTasks();
+    const i = tasks.findIndex(task => task.id === id);
+
+    let removed;
+    if (i >= 0) {
+        removed = tasks.splice(i, 1);
+        const success = await setTasks(tasks);
+
+        if (success) {
+            res.status(201).json({ removed: removed });
+        } else {
+            res.status(500).json({ error: 'error during writing json file' });
+        }
+    } else {
+        res.status(404).json({ error: 'task not found' });
+    }
+
+})
 
 module.exports = { router };
 
