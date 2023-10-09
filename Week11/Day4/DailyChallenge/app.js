@@ -21,7 +21,7 @@ app.get('/emojis', (req, res) => {
     });
 
     if (emojis) {
-        res.status(200).json({ emojis });
+        res.status(200).json(emojis);
     } else {
         res.status(500).json('something went wrong');
     }

@@ -7,10 +7,12 @@
 body {
     height: 100vh;
     padding: 10% 20%;
+    caret-color: transparent;
 }
 
 form {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column;
     height: 80%;
     text-align: center;
@@ -18,10 +20,20 @@ form {
 
 }
 
+form div#changeable {
+    display: flex;
+    flex-direction: column;
+}
+
+#spinner {
+    display: none;
+}
+
 form span#emoji {
     font-size: 60px;
 }
 
-form input, form select {
+form input,
+form select {
     padding: 10px;
 }
