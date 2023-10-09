@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/235f313335.js" crossorigin="anonymous"></script>
+    <title>Smile Game</title>
+</head>
+
+<body>
+    <form> 
+        <i id="spinner" class="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
+        <span>
+            Score: <span id="score">0</span>
+        </span>
+        <span id="emoji">😊</span>
+        <select name="emoji_name" id="emoji_name">
+            <option value="happy">happy</option>
+            <option value="joy">joy</option>
+            <option value="laugh">laugh</option>
+            <option value="smile">smile</option>
+        </select>
+        <input type="submit" value="send">
+    </form>
+    <script src="./script.js"></script>
+</body>
+
+</html>

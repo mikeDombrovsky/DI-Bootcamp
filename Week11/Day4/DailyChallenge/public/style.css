@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 10% 20%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+form span#emoji {
+    font-size: 60px;
+}
+
+form input, form select {
+    padding: 10px;
+}
