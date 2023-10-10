@@ -13,11 +13,37 @@ start_btn.addEventListener('click', startGame);
 
 async function postEmoji(e) {
     e.preventDefault();
+    const { id, value } = e.target.emoji_name;
+    console.log(id, value);
+    const resp = await fetch('/emojis/' + id,
+        {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ name: value })
+        });
+    const result = await resp.json();
+    if (result.isTrue) {
+        showTrueAnswer();
+    }
 
+    console.log(result);
+    if (used_emoji_ids.length === 30) {
+        stopGame();
+    } else {
+        showNextEmoji();
+    }
+}
+
+function showTrueAnswer() {
+    score++;
+    const scoreSpan = document.getElementById('score');
+    scoreSpan.innerText = score;
+}
+
+function stopGame(){
     
-    console.log(e.target.emoji_name.value);
-
-    showNextEmoji();
 }
 
 async function showNextEmoji() {
@@ -29,7 +55,7 @@ async function showNextEmoji() {
     const [name1, name2, name3, name4] = names;
     const newHtml = `
         <span id="emoji">${character}</span>
-        <select name="emoji_name" id="emoji_name">
+        <select name="emoji_name" id="${id}">
             <option value="${name1}">${name1}</option>
             <option value="${name2}">${name2}</option>
             <option value="${name3}">${name3}</option>
