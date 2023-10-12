@@ -34,12 +34,11 @@ form div#changeable {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(204, 149, 255, 0.064);
 }
 
 #spinner {
     position: absolute;
-    right: 49vw;
+    right: calc(50vw - 15px);
     top: 20vh;
 }
 

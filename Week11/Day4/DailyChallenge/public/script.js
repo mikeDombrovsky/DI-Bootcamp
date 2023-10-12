@@ -5,7 +5,7 @@ let emojis;
 let score = 0;
 fetchEmojis();
 
-const used_emoji_ids = [];
+let used_emoji_ids = [];
 
 const start_btn = document.getElementById('start');
 start_btn.addEventListener('click', startGame);
@@ -45,8 +45,6 @@ async function postEmoji(e) {
         updateScore();
     }
 
-    console.log(result);
-    console.log(used_emoji_ids.length);
     if (used_emoji_ids.length === 29) {
         stopGame();
     } else {
@@ -90,6 +88,9 @@ async function showNextEmoji() {
 }
 
 function stopGame() {
+    used_emoji_ids = [];
+    score = -1;
+    updateScore();
     form.style.display = 'none';
     start_btn.style.display = 'block';
 }
@@ -101,10 +102,8 @@ function showSpinner() {
 }
 
 function hideSpinner() {
-    setTimeout(() => {
         const cover = document.querySelector('div.cover');
         cover.style.display = 'none';
-    }, 200);
 }
 
 function getRandomId() {
