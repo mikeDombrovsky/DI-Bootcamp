@@ -6,8 +6,12 @@
 
 body {
     height: 100vh;
-    padding: 10% 20%;
     caret-color: transparent;
+}
+
+main {
+    padding: 10% 20%;
+    height: 100%;
 }
 
 form {
@@ -25,7 +29,26 @@ form div#changeable {
     flex-direction: column;
 }
 
+.cover {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(204, 149, 255, 0.064);
+}
+
 #spinner {
+    position: absolute;
+    right: 49vw;
+    top: 20vh;
+}
+
+.clapping_hands {
+    position: absolute;
+    right: 20vw;
+    top: 20vh;
+    font-size: 30px;
+    padding: 10px;
     display: none;
 }
 
@@ -38,7 +61,7 @@ form select {
     padding: 10px;
 }
 
-button#start{
+button#start {
     margin: 20px 0;
     padding: 10px;
 }

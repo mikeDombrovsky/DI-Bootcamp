@@ -10,27 +10,28 @@
 </head>
 
 <body>
-    <span id="reaction">😊</span>
-    <h1>Emoji Game</h1>
-    <p>Try guessing proper emoji name!</p>
-    <button id="start">Start Game</button>
-    <form>
+    <div class="cover">
         <i id="spinner" class="fa-solid fa-spinner fa-spin-pulse fa-2xl"></i>
-        <span class="score">
-            Score: <span id="score">0</span>
-        </span>
-        <div id="changeable">
-            <span id="emoji">😊</span>
-            <select name="emoji_name" id="emoji_name">
-                <option value="happy">happy</option>
-                <option value="joy">joy</option>
-                <option value="laugh">laugh</option>
-                <option value="smile">smile</option>
-            </select>
-        </div>
+    </div>
+    <div class="clapping_hands">Bravo! 👏👏👏</div>
+    <main>
+        <span id="reaction">😊</span>
+        <h1>Emoji Game</h1>
+        <p>Try guessing proper emoji name!</p>
+        <button id="start">Start Game</button>
+        <form>
 
-        <input type="submit" value="send">
-    </form>
+            <span class="score">
+                Score: <span id="score">0</span>
+            </span>
+            <div id="changeable">
+            </div>
+
+            <input type="submit" value="send">
+        </form>
+    </main>
+
+
     <script src="./script.js"></script>
 </body>
 
