@@ -1,4 +1,5 @@
 const express = require('express');
+const { getResults, setResults } = require('./read-file.js');
 const { emojiArray } = require('./data.js');
 
 const app = express();
@@ -44,6 +45,37 @@ app.post('/emojis/:id', (req, res) => {
         res.status(200).json({ isTrue: false });
     }
 });
+
+app.put('/results', async (req, res) => {
+    const { dateTime, result } = req.body;
+    const results = await getResults();
+
+    if (!results) {
+        console.log('results are ', results);
+        res.status(500).json({ error: 'wrong data' });
+        return;
+    }
+
+    results.push({ dateTime, result });
+
+    const success = await setResults(results);
+    if (success) {
+        res.status(201).json({ added: { dateTime, result } });
+    } else {
+        res.status(500).json({ error: 'error during writing json file' });
+    }
+});
+
+app.get('/results', async (req, res) => {
+    const results = await getResults();
+    if (!results) {
+        console.log('results are ', results);
+        res.status(500).json({ error: 'wrong data' });
+        return;
+    }
+    res.status(200).json(results);
+})
+
 
 
 app.listen(3000, () => console.log('listening port 3000...'));
