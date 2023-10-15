@@ -4,7 +4,7 @@ form.addEventListener('submit', postEmoji);
 let emojis;
 let score = 0;
 fetchEmojis();
-
+showResults();
 let used_emoji_ids = [];
 
 const start_btn = document.getElementById('start');
@@ -17,6 +17,24 @@ async function fetchEmojis() {
         emojis = emojiArr;
     } else {
         console.error('error doring initial emojis fetch');
+    }
+}
+
+async function showResults() {
+    const res = await fetch('/results');
+    const results = await res.json();
+    if (results) {
+        const liderboard = document.querySelector('section#liderboard');
+        liderboard.innerHTML = results.reduce((acc, result) =>
+            acc.concat(`
+                <div class="stat">
+                    <span>${result.dateTime}</span>
+                    <span id="stat_score">
+                        <span>Score: </span>
+                        <span>${result.score}</span>
+                    <span>
+                </div>
+            `), '');
     }
 }
 
@@ -46,16 +64,27 @@ async function postEmoji(e) {
     }
 
     if (used_emoji_ids.length === 29) {
+        showSpinner();
+        const resp2 = await fetch('/results',
+        {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({dateTime: new Date().toDateString(), score})
+        });
+        hideSpinner();
+        showResults();
         stopGame();
     } else {
         showNextEmoji();
     }
 }
 
-function clapping_hands(){
+function clapping_hands() {
     const hands = document.querySelector('div.clapping_hands');
     hands.style.display = 'block';
-    setTimeout(()=> {
+    setTimeout(() => {
         hands.style.display = 'none';
     }, 1000)
 }
@@ -102,8 +131,8 @@ function showSpinner() {
 }
 
 function hideSpinner() {
-        const cover = document.querySelector('div.cover');
-        cover.style.display = 'none';
+    const cover = document.querySelector('div.cover');
+    cover.style.display = 'none';
 }
 
 function getRandomId() {

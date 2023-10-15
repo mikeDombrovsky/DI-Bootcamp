@@ -10,15 +10,20 @@ body {
 }
 
 main {
-    padding: 10% 20%;
+    padding: 5% 20%;
     height: 100%;
+}
+
+button#start {
+    margin: 20px 0;
+    padding: 10px;
 }
 
 form {
     display: none;
     /* display: flex; */
     flex-direction: column;
-    height: 80%;
+    height: 60%;
     text-align: center;
     justify-content: space-around;
 
@@ -60,7 +65,20 @@ form select {
     padding: 10px;
 }
 
-button#start {
-    margin: 20px 0;
-    padding: 10px;
+section#liderboard{
+    height: fit-content;
+    max-height: 25%;
+    overflow-y: scroll;
+}
+div.stat{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+div.stat  span#stat_score{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
 }

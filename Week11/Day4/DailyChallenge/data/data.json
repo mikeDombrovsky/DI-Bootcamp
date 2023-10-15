@@ -1,1 +1,26 @@
-[{"dateTime":"smile","result":10}]
+[
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 12
+    },
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 11
+    },
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 11
+    },
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 12
+    },
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 11
+    },
+    {
+        "dateTime": "Sun Oct 15 2023",
+        "score": 11
+    }
+]

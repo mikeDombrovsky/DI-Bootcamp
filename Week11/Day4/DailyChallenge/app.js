@@ -47,7 +47,7 @@ app.post('/emojis/:id', (req, res) => {
 });
 
 app.put('/results', async (req, res) => {
-    const { dateTime, result } = req.body;
+    const { dateTime, score } = req.body;
     const results = await getResults();
 
     if (!results) {
@@ -56,11 +56,12 @@ app.put('/results', async (req, res) => {
         return;
     }
 
-    results.push({ dateTime, result });
+    results.push({ dateTime, score });
+    results.sort((res1, res2) => res2.score - res1.score);
 
     const success = await setResults(results);
     if (success) {
-        res.status(201).json({ added: { dateTime, result } });
+        res.status(201).json({ added: { dateTime, score } });
     } else {
         res.status(500).json({ error: 'error during writing json file' });
     }
