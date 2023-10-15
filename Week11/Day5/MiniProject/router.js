@@ -8,7 +8,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
     getTasks().then(tasks => {
         if (tasks) {
-            console.log(tasks);
             res.json(tasks);
         } else {
             res.status(500).json({ error: 'error during reading json file' });
@@ -34,7 +33,7 @@ router.post('/', async (req, res) => {
 
     if (title && content) {
         const id = tasks.length > 0 ?
-            tasks.slice(-1).id + 1
+            tasks[tasks.length - 1].id + 1
             : 1;
 
         new_task.id = id;
