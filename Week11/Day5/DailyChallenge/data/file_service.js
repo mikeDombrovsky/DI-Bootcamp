@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const PATH = './data.json';
+const PATH = './data/data.json';
 
 async function getData() {
     try {
@@ -12,9 +12,9 @@ async function getData() {
     }
 }
 
-async function setData(results) {
+async function setData(data) {
     try {
-        fs.writeFileSync(PATH, JSON.stringify(results));
+        fs.writeFileSync(PATH, JSON.stringify(data));
         return true;
     } catch (err) {
         console.log(err);
