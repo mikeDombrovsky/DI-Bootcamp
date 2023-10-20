@@ -1,4 +1,0 @@
-
-const register = (req, res) => {
-    
-}

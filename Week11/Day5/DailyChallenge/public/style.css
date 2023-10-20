@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+form{
+    width: 80%;
+    margin: 20% auto;
+    text-align: center;
+}
+
+form h1{
+    text-align: left;
+}
+
+input{
+    margin: 10px 0;
+    padding: 5px;
+    width: 60%;
+}
+
+input[type=submit]{
+    width: 100%;
+}
