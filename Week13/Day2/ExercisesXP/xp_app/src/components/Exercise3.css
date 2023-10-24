@@ -1,4 +1,14 @@
+/* ex3 part 1 */
 h1.ex3{
     color: red;
     background-color: lightblue;
+}
+
+/* ex3 part 3 */
+.para {
+    background-color: #282c34;
+    color: white;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
 }
