@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   randomHsl = () => {
-    return 'hsla(' + (Math.random() * 360) + ', 100%, 50%, 1)';
+    return 'hsla(' + (Math.random() * 360) + ', 70%, 60%, 1)';
   }
 
   render() {
