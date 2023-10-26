@@ -7,15 +7,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      quote: quotes[0].quote,
-      author: quotes[0].author,
+      quote: 'Push on button, bro',
+      author: 'Mike Dombrovski',
       rand: 0,
       color: this.randomHsl(),
       bg_color: this.randomHsl(),
       bg_color_card: this.randomHsl(),
       bg_color_btn: this.randomHsl()
     }
-    this.setNewQuote();
   }
 
   setNewQuote = () => {
