@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Events = () => {
+    const [isToggleOn, setToggle] = useState(true);
 
     const clickMe = () => {
         alert('I was clicked');
@@ -8,11 +9,9 @@ const Events = () => {
 
     const handleKeyDown = (event) => {
         if (event.keyCode === 13) {
-            alert('The Enter key was pressed, your input is', event.target.value);
+            alert('The Enter key was pressed, your input is ' + event.target.value);
         }
     }
-
-    const [isToggleOn, setToggle] = useState(true);
 
     const onClickHandler = () => {
         setToggle(!isToggleOn);
@@ -20,12 +19,15 @@ const Events = () => {
 
     return (
         <div>
+            {/*ex2 part1 */}
             <button onClick={clickMe}>Click me</button>
+            {/*ex2 part2 */}
             <input
                 type="text"
                 placeholder="Press the enter key"
                 onKeyDown={handleKeyDown}
             />
+            {/*ex2 part3 */}
             <button onClick={onClickHandler}>{isToggleOn ? 'ON' : 'OFF'}</button>
         </div>
     )

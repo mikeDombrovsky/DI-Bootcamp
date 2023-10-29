@@ -1,5 +1,6 @@
 import Car from './Components/Car';
 import Events from './Components/Events';
+import Phone from './Components/Phone';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Car model={carinfo.model}/>
       <Events/>
+      <Phone/>
     </div>
   );
 }
