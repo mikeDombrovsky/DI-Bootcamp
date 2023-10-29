@@ -9,6 +9,19 @@ form input {
     background-color: rgba(89, 0, 255, 0.164);
     outline: none;
 }
+.select_operation {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    /* align-items: center; */
+}
+
+.select_operation select{
+    padding: 15px;
+    border-radius: 15px;
+    outline: none;
+    font-size: 20px;
+}
 
 button {
     font-size: 20px;
