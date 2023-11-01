@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 class Color extends React.Component {
   constructor() {
@@ -9,10 +9,6 @@ class Color extends React.Component {
     };
   }
 
-  //it works every time when component mounts or updates
-  // useEffect(() => {
-  //     alert('UseEffect reached');
-  // });
   shouldComponentUpdate(nextProps, nextState, nextContext) {
     console.log("shouldComponentUpdate", nextProps, nextState, nextContext);
     //part1-1
@@ -61,7 +57,7 @@ export default Color;
 class Child extends React.Component {
   componentWillUnmount() {
     console.log("componentWillUnmount ", this);
-    alert('the component named Child is about to be unmounted')
+    alert("the component named Child is about to be unmounted");
   }
 
   render() {
