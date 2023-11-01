@@ -18,7 +18,8 @@ class BuggyCounter extends Component {
         }
 
         return (
-            <div onClick={this.hendleClick}>
+            <div onClick={this.hendleClick} style={{backgroundColor:'#779999', margin:'2px', color:'white'}}>
+                <p>Click on me 5 times!</p>
                 {this.state.counter}
             </div>
         );
