@@ -1,13 +1,14 @@
-
-import './App.css';
-import BuggyCounter from './BuggyCounter';
-import ErrorBoundary from './ErrorBoundary';
+import "./App.css";
+import BuggyCounter from "./BuggyCounter";
+import Color from "./Color";
+import ErrorBoundary from "./ErrorBoundary";
 
 function App() {
   return (
     <div className="App">
+      <p style={{ textAlign: "left" }}>Exercise 1 ErrorBoundary</p>
       <p>Simulation 1 - both counters in one error handler</p>
-       <ErrorBoundary>
+      <ErrorBoundary>
         <BuggyCounter />
         <BuggyCounter />
       </ErrorBoundary>
@@ -19,7 +20,11 @@ function App() {
         <BuggyCounter />
       </ErrorBoundary>
       <p>Simulation 3 - counter without error handler</p>
-      <BuggyCounter/>
+      <BuggyCounter />
+      <p style={{ textAlign: "left" }}>
+        Exercise 2 shouldComponentUpdate(), componentDidUpdate()
+      </p>
+      <Color />
     </div>
   );
 }
