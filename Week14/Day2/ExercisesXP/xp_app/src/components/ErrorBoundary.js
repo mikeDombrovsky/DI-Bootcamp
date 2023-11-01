@@ -23,7 +23,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div style={{ border: "5px solid pink", margin: "5px" }}>
+        <div style={{ border: "5px solid #ff00008c", margin: "5px" }}>
           <h2>OOPS...=0</h2>
           <details style={{ whiteSpace: "pre-wrap" }}>
             <div>Error</div>
@@ -36,7 +36,7 @@ class ErrorBoundary extends Component {
     }
     console.log(this.state);
     return (
-      <div style={{ border: "5px solid pink", margin: "5px" }}>
+      <div style={{ border: "5px solid pink", margin: "10px" }}>
         {this.props.children}
       </div>
     );
