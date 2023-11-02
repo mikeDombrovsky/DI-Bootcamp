@@ -8,7 +8,7 @@ function App() {
 
   const addTask = (e) => {
     if (e.key === "Enter") {
-      if (task == "") {
+      if (task === "") {
         return;
       }
       const tasksCopy = [...tasks];
