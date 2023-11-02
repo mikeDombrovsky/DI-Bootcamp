@@ -7,6 +7,8 @@ div.task {
 
 div.task span:hover{
     text-decoration-line: line-through;
+    cursor: pointer;
+    color: lightcoral;
 }
 
 div.void {
