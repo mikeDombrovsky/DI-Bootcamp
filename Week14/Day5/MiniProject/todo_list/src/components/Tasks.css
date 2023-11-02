@@ -1,0 +1,16 @@
+div.task {
+  text-align: left;
+  padding: 10px 20px;
+  margin: 2px;
+  background-color: white;
+}
+
+div.task span:hover{
+    text-decoration-line: line-through;
+}
+
+div.void {
+  padding: 10px;
+  margin: 2px;
+  background-color: white;
+}
