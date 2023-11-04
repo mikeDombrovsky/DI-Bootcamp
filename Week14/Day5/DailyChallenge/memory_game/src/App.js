@@ -1,6 +1,8 @@
 import superheroes from "./superheroes.json";
 import "./App.css";
 import { useState } from "react";
+import CardList from "./components/CardList.js";
+
 
 function App() {
   const [score, setScore] = useState(0);
@@ -31,7 +33,20 @@ function App() {
 
   return (
     <div className="App">
-      <CardList heroes={heroes} />
+      <header>
+        <div>
+          <h2>Superheroes Memory Game</h2>
+          <p>
+            <span>Score:{score}</span>
+            <span>Top Score:{topScore}</span>
+          </p>
+        </div>
+        <div>
+          Get points by clicking on an image but don't click on any more than
+          once!
+        </div>
+      </header>
+      <CardList heroes={heroes} count={count}/>
     </div>
   );
 }
