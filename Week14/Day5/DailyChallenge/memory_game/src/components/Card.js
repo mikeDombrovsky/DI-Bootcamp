@@ -1,7 +1,9 @@
 import "./Card.css";
 
 function Card({ hero, count }) {
-  console.log(hero.name, hero.clicked);
+  if (hero.clicked) {
+    console.log(hero.name, hero.clicked);
+  }
   return (
     <div className="card" onClick={() => count(hero.id)}>
       <div className="img_container">
