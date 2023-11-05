@@ -1,0 +1,38 @@
+section.form {
+  background-color: antiquewhite;
+}
+
+section.form h1 {
+  color: white;
+  background-color: rgb(73, 27, 27);
+  padding: 10px;
+}
+
+section.form form {
+  padding: 10px;
+}
+
+section.form input[type="text"],
+section.form input[type="submit"],
+select {
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+  width: 50%;
+}
+
+label {
+  margin: 5px;
+}
+
+div.gender {
+  margin: 5px 0;
+}
+
+div.select_destination {
+  margin: 15px 0;
+}
+
+div.restriction {
+  margin: 5px 0;
+}
