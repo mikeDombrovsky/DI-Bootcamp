@@ -1,3 +1,5 @@
+import './MealDisplay.css';
+
 const MealDisplay = ({
   name,
   lastName,
@@ -9,8 +11,8 @@ const MealDisplay = ({
   vegan_meal,
 }) => {
   return (
-    <section>
-      <h3>Entered information</h3>
+    <section className="display">
+      <h3>Entered information:</h3>
       <p>
         Your name: {name} {lastName}
       </p>
@@ -19,9 +21,9 @@ const MealDisplay = ({
       <p>Your destination: {destination}</p>
 
       <p>Your dietary restrictions:</p>
-      <p>**Nuts free: {nuts_free}</p>
-      <p>**Lactose free: {lactose_free}</p>
-      <p>**Vegan meal: {vegan_meal}</p>
+      <p className="restriction">**Nuts free: {nuts_free}</p>
+      <p className="restriction">**Lactose free: {lactose_free}</p>
+      <p className="restriction">**Vegan meal: {vegan_meal}</p>
     </section>
   );
 };

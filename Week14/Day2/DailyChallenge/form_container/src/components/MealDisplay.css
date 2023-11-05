@@ -1,0 +1,13 @@
+section.display{
+    color: white;
+    background-color: rgb(49, 75, 69);
+    padding: 10px;
+}
+
+section.display p{
+    margin: 15px 0;
+}
+
+section.display p.restriction{
+    margin: 5px 15px;
+}

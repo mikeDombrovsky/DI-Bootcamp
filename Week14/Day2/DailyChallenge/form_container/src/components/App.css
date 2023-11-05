@@ -9,6 +9,6 @@
   flex-direction: column;
 }
 
-.App input[type="text"]{
-  display: block;
+.App hr{
+  margin: 5px 0;
 }
