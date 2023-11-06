@@ -11,9 +11,9 @@ class Example3 extends React.Component {
               <br />
               <a href={url}>{companyName}</a>
               <br />
-              {roles.map(({ title, startDate, location, description }, i) => {
+              {roles.map(({ title, startDate, location, description }, j) => {
                 return (
-                  <div key={i}>
+                  <div key={j}>
                     <p>
                       <b>{title}</b>
                     </p>
