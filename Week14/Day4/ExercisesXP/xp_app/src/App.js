@@ -6,6 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import HomeScreen from "./components/HomeScreen";
 import ProfileScreen from "./components/ProfileScreen";
+import ShopScreen from "./components/ShopScreen";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
@@ -14,20 +16,22 @@ function App() {
         <Navbar id="navBar" bg="primary" data-bs-theme="dark">
           <Container>
             <Nav className="me-auto">
-              <NavLink to="/" className="">
-                Home
-              </NavLink>
+              <NavLink to="/">Home</NavLink>
               <NavLink to="/profile">Profile</NavLink>
               <NavLink to="/shop">Shop</NavLink>
             </Nav>
           </Container>
         </Navbar>
 
-        <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/profile" element={<ProfileScreen />} />
-          <Route path="/shop" element={<>Poop3</>} />
-        </Routes>
+        <Container>
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<HomeScreen />} />
+              <Route path="/profile" element={<ProfileScreen />} />
+              <Route path="/shop" element={<ShopScreen />} />
+            </Routes>
+          </ErrorBoundary>
+        </Container>
       </>
     </BrowserRouter>
   );

@@ -1,5 +1,5 @@
 const ShopScreen = () => {
-    throw Error('oops!');
+  throw new Error("oops!");
 };
 
 export default ShopScreen;
