@@ -3,6 +3,7 @@ import { Router } from "express";
 const todos_router = Router();
 
 const todos = [];
+let count = 1;
 
 todos_router.get("/", (req, res) => {
   res.status(200).json(todos);
@@ -14,7 +15,7 @@ todos_router.post("/", (req, res) => {
     return res.status(400).json({ error: "something missed" });
   }
   try {
-    todos.push({ id: todos.length + 1, title });
+    todos.push({ id: count++, title });
     res.status(200).json(todos);
   } catch (err) {
     console.log(err);
