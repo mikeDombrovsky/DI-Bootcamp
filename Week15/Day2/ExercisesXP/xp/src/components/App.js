@@ -4,6 +4,7 @@ import { ThemeProvider } from "./ThemeContext";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ChangeMe } from "./ChangeMe";
 import { CharacterCounter } from "./CharacterCounter";
+import { TodoList } from "./TodoList";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <hr />
       <p>Exercise 3</p>
       <hr />
+      <TodoList/>
     </div>
   );
 }
