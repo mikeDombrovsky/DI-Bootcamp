@@ -7,7 +7,6 @@ export function CharacterCounter() {
 
   const handleInputChange = () => {
     const textLength = inputRef.current.value.length;
-    // Update the character count based on textLength
     setLength(textLength)
   };
 
@@ -19,7 +18,7 @@ export function CharacterCounter() {
         onChange={handleInputChange}
         placeholder="Type something..."
       ></textarea>
-      <p>Character Count: {/* Display character count here */length}</p>
+      <p>Character Count: {length}</p>
     </div>
   );
 }
