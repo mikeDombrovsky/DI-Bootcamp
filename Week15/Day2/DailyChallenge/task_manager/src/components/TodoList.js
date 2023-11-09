@@ -11,12 +11,14 @@ function todoReducer(state, action) {
         { id: Date.now(), text: action.text, status: "active" },
       ];
     case "REMOVE_TODO":
-      // Remove a todo by its id
+      // Remove todo by id
       return state.filter((todo) => todo.id !== action.id);
     case "EDIT_TODO":
+      // Edit todo by id
       return state.map((todo) => {
         if (todo.id === action.id) {
           todo.text = action.text;
+          todo.status = action.status;
           return todo;
         }
         return todo;
@@ -29,8 +31,7 @@ function todoReducer(state, action) {
 export function TodoList() {
   const [todos, dispatch] = useReducer(todoReducer, []);
   const [todoText, setTodoText] = useState("");
-  const [editText, setEditText] = useState("");
-  const [isEditActive, setIsEditActive] = useState(false);
+  const [filterBy, setFilterBy] = useState("completed active");
 
   const handleAddTodo = () => {
     if (todoText.trim() === "") return;
@@ -38,20 +39,17 @@ export function TodoList() {
     setTodoText("");
   };
 
+  const handleEditTodo = (id, text, status) => {
+    if (text.trim() === "") return;
+    dispatch({ type: "EDIT_TODO", id, text, status});
+  };
+
   const handleRemoveTodo = (id) => {
     dispatch({ type: "REMOVE_TODO", id });
   };
 
-  const handleEditTodo = (id) => {
-    if (editText.trim() === "") return;
-    dispatch({ type: "EDIT_TODO", text: editText, id });
-    setEditText("");
-    setIsEditActive(false);
-  };
-
-  const handleShowInput = () => {
-    setIsEditActive(true);
-    setEditText(todoText);
+  const filter = (arr) => {
+    return arr.filter((todo) => filterBy.includes(todo.status));
   };
 
   return (
@@ -64,24 +62,20 @@ export function TodoList() {
         onChange={(e) => setTodoText(e.target.value)}
       />
       <button onClick={handleAddTodo}>Add Todo</button>
+      <div>
+        <button onClick={() => setFilterBy("completed active")}>
+          Show All
+        </button>
+        <button onClick={() => setFilterBy("completed")}>Show Completed</button>
+        <button onClick={() => setFilterBy("active")}>Show Active</button>
+      </div>
       <ul>
-        {todos.map((todo) => (
-          <>
-            <li key={todo.id} onClick={handleShowInput}>
-              {isEditActive ? (
-                <input
-                  onChange={(e) => setEditText(e.target.value)}
-                  value={editText}
-                />
-              ) : (
-                todo.text
-              )}
-
-              <button onClick={() => handleRemoveTodo(todo.id)}>Remove</button>
-              <button onClick={() => handleEditTodo(todo.id)}>Edit</button>
-            </li>
-            {/* <Todo /> */}
-          </>
+        {filter(todos).map((todo) => (
+          <Todo
+            todo={todo}
+            handleEditTodo={handleEditTodo}
+            handleRemoveTodo={handleRemoveTodo}
+          />
         ))}
       </ul>
     </div>
