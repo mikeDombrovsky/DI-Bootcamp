@@ -1,0 +1,37 @@
+* {
+  caret-color: transparent;
+}
+
+main {
+  background: linear-gradient(
+    to right top,
+    rgb(161, 232, 255),
+    rgb(148, 148, 255)
+  );
+  height: 100vh;
+  color: white;
+}
+
+nav h1 {
+  display: inline-block;
+}
+
+nav input {
+  caret-color: white;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  padding: 5px;
+  margin: 20px;
+  width: 50%;
+}
+
+nav input::placeholder {
+  color: white;
+}
+
+nav input::-webkit-search-cancel-button {
+  color: white;
+}
