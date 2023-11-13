@@ -30,7 +30,7 @@ auth_router.post("/register", (req, res) => {
   });
 
   res.cookie("token", token, { httpOnly: true });
-  res.status(201).json({ msg: "user registered" });
+  res.status(201).json({ msg: "user registered", token });
 });
 
 auth_router.post("/login", (req, res) => {
@@ -42,16 +42,50 @@ auth_router.post("/login", (req, res) => {
     return res.status(401).json({ msg: "invalid credentials" });
   }
 
+  // Generate an access token for the authenticated user
   const token = jwt.sign({ id: user.id, username }, secretKey, {
     expiresIn: "1h",
   });
 
+  const refreshToken = jwt.sign({ id: user.id, username }, secretKey, {
+    expiresIn: "7d",
+  });
+
   res.cookie("token", token, { httpOnly: true });
-  res.status(200).json({ msg: "login success" });
+  res.cookie("refreshToken", refreshToken, { httpOnly: true });
+  res.status(200).json({ msg: "login success", token });
+});
+
+auth_router.post("/refresh", (req, res) => {
+  const refreshToken = req.cookies.refreshToken;
+
+  if (!refreshToken) {
+    return res.status(401).json({ msg: "refresh token not valid" });
+  }
+
+  jwt.verify(refreshToken, secretKey, (err, user) => {
+    if (err) {
+      return res.status(403).json({ msg: "refresh token verification failed" });
+    }
+
+    //new access token generation
+    const accessToken = jwt.sign(
+      { id: user.id, username: user.username },
+      secretKey,
+      {
+        expiresIn: "1h",
+      }
+    );
+
+    // Set the new access token as an HTTP cookie
+    res.cookie("token", accessToken, { httpOnly: true });
+    res.status(200).json({msg:'token refreshed'})
+  });
 });
 
 auth_router.post("/logout", (req, res) => {
   res.clearCookie("token");
+  res.clearCookie("refreshToken");
   res.status(200).json({ msg: "logged out" });
 });
 
