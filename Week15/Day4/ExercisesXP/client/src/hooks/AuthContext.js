@@ -1,9 +1,10 @@
 import { createContext, useContext, useState} from 'react';
+import Cookies from 'js-cookie';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-    const [token, setToken] = useState(null);
+    const [token, setToken] = useState(Cookies.get('token'));
 
 
     const handleLogin = (newToken) => {
