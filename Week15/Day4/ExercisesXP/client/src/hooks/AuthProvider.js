@@ -5,7 +5,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   // const [token, setToken] = useState(Cookies.get("token"));
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(null);
 
   const handleLogin = (newToken) => {
     setToken(newToken);

@@ -10,11 +10,11 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 app.use('/', auth_router);
 //public route
-app.use('/home', (req, res) => {
+app.get('/home', (req, res) => {
     res.send('hello!');
 })
 //protected route
-app.use('/profile', authMiddleware, (req,res) => {
+app.get('/profile', authMiddleware, (req,res) => {
     res.json({msg:`Welcome, ${req.user.name}`})
 })
 
