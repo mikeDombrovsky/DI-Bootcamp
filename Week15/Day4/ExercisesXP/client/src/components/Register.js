@@ -1,12 +1,12 @@
 import { useAuth } from "../hooks/AuthProvider";
 
-const Login = () => {
+const Register = () => {
   const { handleLogin } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://127.0.0.1:3000/login", {
+    const response = await fetch("http://127.0.0.1:3000/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,10 +31,10 @@ const Login = () => {
       <label htmlFor="password">Password</label>
       <br />
       <input type="password" name="password" />
-      <input type="submit" value="login" />
+      <input type="submit" value="register" />
       <hr />
     </form>
   );
 };
 
-export default Login;
+export default Register;

@@ -79,7 +79,7 @@ auth_router.post("/refresh", (req, res) => {
 
     // Set the new access token as an HTTP cookie
     res.cookie("token", accessToken, { httpOnly: true });
-    res.status(200).json({msg:'token refreshed'})
+    res.status(200).json({msg:'token refreshed', token:accessToken})
   });
 });
 
