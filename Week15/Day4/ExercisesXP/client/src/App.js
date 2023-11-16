@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   const { token, handleLogout } = useAuth();
-  const {isLoged, setIsLoged} = useState(false);
+
   //??component does not refresh when token loaded - need manual refresh page
   return (
     <AuthProvider>
