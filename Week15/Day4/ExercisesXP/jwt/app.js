@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cookieParser());
 app.use(cors());
+//routers
 app.use('/', auth_router);
 //public route
 app.get('/home', (req, res) => {
