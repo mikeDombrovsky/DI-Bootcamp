@@ -35,8 +35,8 @@ print(disney_users_D) # {"Mickey": 0, "Minnie": 1, "Ariel": 2}
 disney_users_E = {}
 i = 0
 for user in users:
-    if user[0] in 'MP':
+    if user[0].lower() in 'mp':
         disney_users_E[user] = i
         i += 1
-print(disney_users_E) # {"Mickey": 0, "Minnie": 1,  "Pluto":2}        
+print(disney_users_E) # {"Mickey": 0, "Minnie": 1,  "Pluto": 2}        
         
