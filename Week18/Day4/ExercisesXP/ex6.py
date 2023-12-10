@@ -42,5 +42,4 @@ def main():
         message += 'Quite hot! You must take away a bottle of water and sun hat'   
     print(message)
 
-main()    
-    
+main()
