@@ -25,21 +25,34 @@ data = [
     }
 ]
 
-wrong_aswers = []
-correct_answers = 0
+wrong_answers = dict()
+correct_answers = []
 
 def star_wars_quiz():
-    for item in data:
+    for i, item in enumerate(data):
+        if len(wrong_answers) >= 3:
+            print('Try to play again!')
+            print_wrong_answer_info()
+            break
         question, answer = item.values()
         user_answer = input(f'{question}')
-        if user_answer != answer:
-            wrong_aswers.append(user_answer)
+        if user_answer.lower() != answer.lower():
+            wrong_answers[i] = user_answer
+            print('')
         else:
-            correct_answers += 1
+            correct_answers.append(answer)
                 
         inform()
         
+def print_wrong_answer_info():
+    print('You answerd wrong to next questions:\n')
+    
+    for i, user_answer in wrong_answers.items():
+        question, answer = data[i].values()
+        print(f'{question}\n Your answer: {user_answer}\n Correct: {answer}')
+               
+        
 def inform():
-    print(f'Correct answers: {correct_answers}, Incorrect answers: {len(wrong_aswers)}')        
+    print(f'Correct answers: {len(correct_answers)}, Incorrect answers: {len(wrong_answers)}')        
         
 star_wars_quiz()
