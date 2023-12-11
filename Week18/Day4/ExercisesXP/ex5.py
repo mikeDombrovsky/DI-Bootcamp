@@ -1,14 +1,8 @@
-import random
-
-def guess_random(users_number):
+numbers = range(1, 20)
+for i in numbers:
+    print(i)
     
-    if(1 > users_number > 100):
-        return print('number must be from 1 to 100')
     
-    rand = random.randint(1, 100)
-    if rand == users_number:
-        print('Success!')
-    else:
-        print(f'Fail. Numbers were: {users_number}, {rand}')
-        
-guess_random(int(input('Guess number from 1 to 100: ')))
+for i, num in enumerate(numbers):
+    if i % 2 == 0:
+        print(num)

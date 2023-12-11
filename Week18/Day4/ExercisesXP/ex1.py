@@ -1,9 +1,10 @@
+my_fav_numbers = set()
+my_fav_numbers.add(2)
+my_fav_numbers.add(1)
+my_fav_numbers.add(3)
+my_fav_numbers.pop() #unordered remove
 
-keys = ['Ten', 'Twenty', 'Thirty']
-values = [10, 20, 30]
+friend_fav_numbers = {6, 4, 5}
 
-res_dict = dict()
-
-for key, value in zip(keys, values):
-    res_dict[key] = value
-print(res_dict)    
+our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
+print(our_fav_numbers)
