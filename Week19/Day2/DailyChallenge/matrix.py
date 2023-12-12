@@ -8,8 +8,9 @@ $a
 #t%
 ^r!"""
 columns = matrix.split('\n')
+
 for row in columns: 
-    print(row,sep='')
+    print(row, sep='')
     one, two, three = row
     
     for symbol in row:
