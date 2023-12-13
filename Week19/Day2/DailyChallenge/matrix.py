@@ -9,9 +9,14 @@ $a
 ^r!"""
 columns = matrix.split('\n')
 
-for row in columns: 
-    print(row, sep='')
-    one, two, three = row
+message = []
+for i in range(len(columns[0])):
     
-    for symbol in row:
-        pass
+    for row in columns: 
+        char = row[i]
+        if char.isalpha():
+            message.append(char)
+        elif len(message) > 0 and message[-1] != ' ':
+            message.append(' ')
+    
+print(''.join(message))
