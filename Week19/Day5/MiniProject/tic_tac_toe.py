@@ -29,7 +29,7 @@ def player_input(player):
                 results[row][column] = player
                 return
         except:
-            print('You typed somethong wrong, try again')
+            print('You typed something wrong, try again')
 
 def check_win():
     return check_row1() or check_row2() or check_row3() or check_col1() or check_col2() or check_col3() or check_diagonal1() or check_diagonal2()
@@ -81,8 +81,8 @@ def check_diagonal2():
     
 def check_full():
     for row in results:
-        for square in row:
-            if square  == ' ':
+        for cell in row:
+            if cell  == ' ':
                 return False
     return True    
 
