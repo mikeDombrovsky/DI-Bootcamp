@@ -86,7 +86,7 @@ def check_full():
                 return False
     return True    
 
-def swithPlayer():
+def switchPlayer():
     global current_player
     if current_player == 'X':
         current_player = 'O'
