@@ -23,7 +23,9 @@ def player_input(player):
         try:
             row = int(input('Enter row (1 - 3): ')) - 1
             column = int(input('Enter column (1 - 3): ')) - 1
-            if results[row][column] != ' ':
+            if row < 0 or column < 0:
+                raise Exception('wrong input')
+            elif results[row][column] != ' ':
                 print('This cell is not empty, sorry')
             else:
                 results[row][column] = player
@@ -38,42 +40,42 @@ def check_win():
         winner = player        
         
     def check_row1():
-        if results[0][0] == results[0][1] == results[0][2]:
+        if current_player == results[0][0] == results[0][1] == results[0][2]:
             setWinner(current_player)
             return True
 
     def check_row2():
-        if results[1][0] == results[1][1] == results[1][2]:
+        if current_player == results[1][0] == results[1][1] == results[1][2]:
             setWinner(current_player)
             return True
 
     def check_row3():
-        if results[2][0] == results[2][1] == results[2][2]:
+        if current_player == results[2][0] == results[2][1] == results[2][2]:
             setWinner(current_player)
             return True
 
     def check_col1():
-        if results[0][0] == results[1][0] == results[2][0]:
+        if current_player == results[0][0] == results[1][0] == results[2][0]:
             setWinner(current_player)
             return True
 
     def check_col2():
-        if results[0][1] == results[1][1] == results[2][1]:
+        if current_player == results[0][1] == results[1][1] == results[2][1]:
             setWinner(current_player)
             return True
 
     def check_col3():
-        if results[0][2] == results[1][2] == results[2][2]:
+        if current_player == results[0][2] == results[1][2] == results[2][2]:
             setWinner(current_player)
             return True
 
     def check_diagonal1():
-        if results[0][0] == results[1][1] == results[2][2]:
+        if current_player == results[0][0] == results[1][1] == results[2][2]:
             setWinner(current_player)
             return True
 
     def check_diagonal2():
-        if current_player == results[0][2] == results[1][1] == results[2][0]:
+        if current_player == current_player == results[0][2] == results[1][1] == results[2][0]:
             setWinner(current_player)
             return True
         
