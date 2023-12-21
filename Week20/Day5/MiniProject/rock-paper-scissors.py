@@ -1,8 +1,7 @@
 from game import Game
 
+
 # display simple menu: Play a new game or Show scores and Quit
-
-
 def get_user_menu_choice():
     choice = input(f'''
 ------------------------------------------------------
@@ -13,7 +12,7 @@ Menu:
 :    ''')
 
     while choice not in ['g', 'q']:
-        choice = input('    (g) or (q) :    ')
+        choice = input('\nChoose (g) or (q)\n\n:    ')
 
     return choice
 
