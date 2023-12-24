@@ -1,8 +1,11 @@
-results = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+results = [[' ', ' ', ' '],
+           [' ', ' ', ' '],
+           [' ', ' ', ' ']]
 
 current_player = 'X'
 
 winner = None
+
 
 def display_board():
     board = f'''
@@ -16,6 +19,7 @@ def display_board():
     *****************
     '''
     print(board)
+
 
 def player_input(player):
     print(f'Player {player} turn.')
@@ -33,12 +37,13 @@ def player_input(player):
         except:
             print('You typed something wrong, try again')
 
+
 def check_win():
 
     def setWinner(player):
         global winner
-        winner = player        
-        
+        winner = player
+
     def check_row1():
         if current_player == results[0][0] == results[0][1] == results[0][2]:
             setWinner(current_player)
@@ -78,15 +83,24 @@ def check_win():
         if current_player == current_player == results[0][2] == results[1][1] == results[2][0]:
             setWinner(current_player)
             return True
-        
-    return check_row1() or check_row2() or check_row3() or check_col1() or check_col2() or check_col3() or check_diagonal1() or check_diagonal2()
-    
+
+    return (check_row1() or
+            check_row2() or
+            check_row3() or
+            check_col1() or
+            check_col2() or
+            check_col3() or
+            check_diagonal1() or
+            check_diagonal2())
+
+
 def check_full():
     for row in results:
         for cell in row:
-            if cell  == ' ':
+            if cell == ' ':
                 return False
-    return True    
+    return True
+
 
 def switchPlayer():
     global current_player
@@ -95,20 +109,22 @@ def switchPlayer():
     else:
         current_player = 'X'
 
+
 def play():
-    
+
     while True:
         display_board()
         player_input(current_player)
-        
+
         if check_win():
             display_board()
             return print(f'Yoooho! {winner} won!')
-        
+
         if check_full():
             display_board()
             return print('Tie! Play again!')
-        
+
         switchPlayer()
+
 
 play()
