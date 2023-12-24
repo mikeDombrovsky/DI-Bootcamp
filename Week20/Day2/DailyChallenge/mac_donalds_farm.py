@@ -6,11 +6,7 @@ class Farm:
         self.animals = {}
 
     def add_animal(self, animal, number=1):
-        count = self.animals.get(animal)
-        if count:
-            self.animals[animal] = count + number
-        else:
-            self.animals.update({animal: number})
+        self.animals[animal] += self.animals.get(animal, number) # if animal does not exist (None), <animal: number> pair is added
 
     def get_info(self):
         message = f'{self.farmer_name}\'s farm\n'

@@ -25,7 +25,7 @@ def player_input(player):
             column = int(input('Enter column (1 - 3): ')) - 1
             if row < 0 or column < 0:
                 raise Exception('wrong input')
-            elif results[row][column] != ' ':
+            if results[row][column] != ' ':
                 print('This cell is not empty, sorry')
             else:
                 results[row][column] = player
