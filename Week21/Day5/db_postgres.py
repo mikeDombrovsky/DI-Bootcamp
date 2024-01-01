@@ -1,10 +1,14 @@
 import psycopg2
+import os
+from dotenv import load_dotenv
 
-DB_HOST = 'localhost'
-DB_USERNAME = 'postgres'
-DB_PASS = 'mypass'
-DB_NAME = 'postgres'
-DB_PORT = '5432'
+load_dotenv()
+
+DB_HOST = os.getenv('DB_HOST')
+DB_USERNAME = os.getenv('DB_USERNAME')
+DB_PASS = os.getenv('DB_PASS')
+DB_NAME = os.getenv('DB_NAME')
+DB_PORT = os.getenv('DB_PORT')
 
 connection = psycopg2.connect(
     host=DB_HOST,
@@ -15,7 +19,7 @@ connection = psycopg2.connect(
 
 cursor = connection.cursor()  # obj that runs queries like pgAdmin query tool.
 
-query = 'SELECT * FROM customer LIMIT 20'
+query = 'SELECT * FROM users LIMIT 2'
 
 cursor.execute(query)
 
