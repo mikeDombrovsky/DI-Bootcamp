@@ -10,7 +10,7 @@ DB_PASS = os.getenv('DB_PASS')
 DB_NAME = os.getenv('DB_NAME')
 DB_PORT = os.getenv('DB_PORT')
 
-params = {
+db_params = {
     "host": DB_HOST,
     "database": DB_NAME,
     "user": DB_USERNAME,
@@ -26,10 +26,7 @@ def set_up():
         item_price SMALLINT DEFAULT 0
     )'''
 
-    results_list = execute_query(query)
-
-    for row in results_list:
-        print(row)
+    results_list = execute_query(query, is_select=False)
 
 
 
@@ -46,20 +43,22 @@ def execute_query(query, is_select=True):
         cursor = connection.cursor()
 
         cursor.execute(query)
-        if(is_select):
-            return cursor.fetchall()
-        return connection.commit()
+        if(not is_select):
+            connection.commit()
+            
+        return cursor.fetchall()
         
 
     except (Exception, psycopg2.Error) as e:
         print(e)
+        return None
     finally:
         if connection:
             cursor.close()
             connection.close()
 
 
-def get_connection(params=params):
+def get_connection(params=db_params):
     try:
         return psycopg2.connect(
             **params)
