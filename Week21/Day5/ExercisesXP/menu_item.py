@@ -36,3 +36,6 @@ class MenuItem:
         self.price = price
         
         return execute_query(query, is_select=False)
+    
+    def __str__(self):
+        return f'< MenuItem. name: {self.name}, price: {self.price}. >'

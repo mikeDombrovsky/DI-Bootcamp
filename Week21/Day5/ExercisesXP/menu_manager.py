@@ -3,16 +3,17 @@ from menu_item import MenuItem
 
 
 class MenuManager:
-
+    
     @classmethod
     def get_by_name(cls, name):
         query = f'''
         SELECT * FROM menu_items
         WHERE item_name = '{name}'
         '''
-        item = execute_query(query)
-        if item and len(item) > 0:
-            return item[0]
+        rows = execute_query(query)
+        if rows and len(rows) > 0:
+            price = rows[0][2]  
+            return MenuItem(name, price)
         return None
 
     @classmethod
@@ -20,9 +21,12 @@ class MenuManager:
         query = f'''
         SELECT * FROM menu_items
         '''
-        item = execute_query(query)
-        if item and len(item) > 0:
-            return item
+        items = []
+        rows = execute_query(query)
+        if rows and len(rows) > 0:
+            for row in rows:
+                items.append(MenuItem(row[1], row[2]))
+            return items
         return None
 
 set_up()
