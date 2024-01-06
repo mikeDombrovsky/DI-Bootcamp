@@ -30,20 +30,20 @@ class MenuManager:
         return None
 
 set_up()
-item = MenuItem('Burger', 35)
-print('saved:', item.save())
-print('updated:', item.update('Veggie Burger', 37))
+# item = MenuItem('Burger', 35)
+# print('saved:', item.save())
+# print('updated:', item.update('Veggie Burger', 37))
 
-item2 = MenuManager.get_by_name('Veggie Burger')
-print('get Veggie Burger:', item2)
+# item2 = MenuManager.get_by_name('Veggie Burger')
+# print('get Veggie Burger:', item2)
 
-item2 = MenuManager.get_by_name('Beef Stew')
-print('get Beef Stew:', item2)
+# item2 = MenuManager.get_by_name('Beef Stew')
+# print('get Beef Stew:', item2)
 
-items = MenuManager.get_all()
-print('get all:', items)
+# items = MenuManager.get_all()
+# print('get all:', items)
 
-print('deleted:', item.delete())
+# print('deleted:', item.delete())
 
-items = MenuManager.get_all()
-print('get all:', items)
+# items = MenuManager.get_all()
+# print('get all:', items)
