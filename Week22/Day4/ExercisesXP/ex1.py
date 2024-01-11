@@ -7,7 +7,7 @@ def main():
         command = show_menu()
         
         if command == 'Q':
-            return print('Good bye! <3 <3 <3')
+            return print('❤ ❤ ❤ Good bye! ❤ ❤ ❤')
         if command == 'T':
             try:
                 task = get_task()
@@ -26,12 +26,12 @@ def main():
 
 def show_menu():
     return input('''
--------------------------
-|  Add task -------(T)  |
-|  Execute task----(E)  |
-|  Show task queue-(S)  |
-|  Exit------------(Q)  |
--------------------------
+╭ ------------------------ ╮
+¦  Add task --------- (T)  ¦
+¦  Execute task ----- (E)  ¦
+¦  Show task queue -- (S)  ¦
+¦  Exit ------------- (Q)  ¦
+╰ ------------------------ ╯
 ''').upper()
     
     
