@@ -19,7 +19,8 @@ class Queue:
             raise ValueError('Priority must be number - 1 or 2')
 
     def __str__(self) -> str:
-
+        if len(self.tasks) == 0:
+            return 'Empty'
         string = '['
         for i in self.tasks:
             string += f'{i},'

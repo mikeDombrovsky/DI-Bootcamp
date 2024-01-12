@@ -1,13 +1,14 @@
 from my_queue import Queue
 
+
 def main():
     tasks = Queue()
-    
+
     while True:
         command = show_menu()
-        
+
         if command == 'Q':
-            return print('❤ ❤ ❤ Good bye! ❤ ❤ ❤')
+            return print('❤Good bye!❤')
         if command == 'T':
             try:
                 task = get_task()
@@ -17,12 +18,13 @@ def main():
                 print(e)
         if command == 'E':
             next = tasks.next()
-            print('next:', next)
             if next:
-                return print(next)
-            print('Queue is empty')
+                print('Executing task:', next[0])
+            else:
+                print('Queue is empty')
         if command == 'S':
             print(f'Task Queue: {tasks}')
+
 
 def show_menu():
     return input('''
@@ -33,13 +35,12 @@ def show_menu():
 ¦  Exit ------------- (Q)  ¦
 ╰ ------------------------ ╯
 ''').upper()
-    
-    
+
+
 def get_task():
-    task =  input('Task: ')
+    task = input('Task: ')
     priority = int(input('Priority: '))
     return task, priority
-
 
 
 if __name__ == '__main__':
