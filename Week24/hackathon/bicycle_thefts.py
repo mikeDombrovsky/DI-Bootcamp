@@ -1,32 +1,39 @@
-import requests
+import matplotlib.pyplot as plt
 import json
+import pandas as pd
 
+# Sorting by values in column 'A'
+# df_sort_values = df.sort_values(by='A')
 
-def set_up():
-    resp = requests.get(
-        'https://services.arcgis.com/S9th0jAJ7bqgIRjw/arcgis/rest/services/Bicycle_Thefts_Open_Data/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+# Using map() function to replace values in a Series
+# df['A'] = df['A'].map({1: 'one', 2: 'two'})
 
-    db_dict = resp.json()
-
-    fields = ['PRIMARY_OFFENCE', 'OCC_DATE', "OCC_YEAR", "OCC_MONTH", "OCC_DAY",
-              "OCC_HOUR", "REPORT_DATE", "REPORT_YEAR", "REPORT_MONTH", "REPORT_DAY",
-              "REPORT_HOUR", "DIVISION", "LOCATION_TYPE", "PREMISES_TYPE", "BIKE_MAKE",
-              "BIKE_MODEL", "BIKE_TYPE", "BIKE_SPEED", "BIKE_COLOUR", "BIKE_COST",
-              "STATUS", 'NEIGHBOURHOOD_158', 'LONG_WGS84', 'LAT_WGS84']
-    print(fields)
-
-    features = []
-
-    # for attr in db_dict['features']:
-    #     my_dict = {}
-    #     features.append({
-    #        'PRIMARY_OFFENCE': attr['PRIMARY_OFFENCE'],
-
-    #     })
-    # my_dict[]
-
-    # with open("./sample.json", "w") as outfile:
-    #     outfile.write(json.dumps(db_dict, indent=2))
-
-
-set_up()
+def main():
+    
+           
+    # reading db from json file 
+    with open("./cases.json", "r") as outfile:
+        arr = json.load(outfile)
+        
+    # print(type(arr))
+    df = pd.json_normalize(arr)
+    print(df.head(5))
+    df_sort_values = df.sort_values(by='OCC_DATE')
+    
+    count_by_primary_offence = df_sort_values.groupby('PRIMARY_OFFENCE').size()
+    print(count_by_primary_offence)
+    # df_sort_values.plot()
+    print(type(count_by_primary_offence))
+    
+    count_by_primary_offence.plot()
+    
+    plt.title('My Plot')  # Set the plot title
+    plt.xlabel('PPRIMARY_OFFENCE')  # Set the label for the x-axis
+    plt.ylabel('Values')  # Set the label for the y-axis
+    plt.grid(True)  # Display a grid
+    # plt.legend(loc='upper left')  # Place the legend in the upper left corner
+    
+    
+    plt.show()
+    
+main()
