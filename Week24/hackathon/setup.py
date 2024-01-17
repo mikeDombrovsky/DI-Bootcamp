@@ -1,6 +1,6 @@
 import requests
 import json
-
+from datetime import datetime
 
 
 def set_up():
@@ -25,7 +25,11 @@ def set_up():
             if key in fields:
                 thief_case[key] = attr['attributes'][key]
         cases.append(thief_case)
-
+        
+    # Convert OCC_DATE to a readable datetime format
+    # for item in cases:
+    #     item['OCC_DATE'] = datetime.utcfromtimestamp(item['OCC_DATE'] / 1000.0)
+        
     # saving result to json file
     with open("./cases.json", "w") as outfile:
         outfile.write(json.dumps(cases, indent=2))
