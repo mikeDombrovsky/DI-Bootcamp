@@ -4,6 +4,7 @@ from datetime import datetime
 
 
 def set_up():
+
     resp = requests.get(
         'https://services.arcgis.com/S9th0jAJ7bqgIRjw/arcgis/rest/services/Bicycle_Thefts_Open_Data/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json')
 
@@ -25,11 +26,9 @@ def set_up():
             if key in fields:
                 thief_case[key] = attr['attributes'][key]
         cases.append(thief_case)
-        
-    # Convert OCC_DATE to a readable datetime format
-    # for item in cases:
-    #     item['OCC_DATE'] = datetime.utcfromtimestamp(item['OCC_DATE'] / 1000.0)
-        
+
     # saving result to json file
     with open("./cases.json", "w") as outfile:
         outfile.write(json.dumps(cases, indent=2))
+        
+    return cases
