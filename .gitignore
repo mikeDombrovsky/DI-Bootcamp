@@ -30,6 +30,7 @@ yarn-error.log*
 **/__pycache__/
 *.py[cod]
 **venv
+**env
 # C extensions
 *.so
 
