@@ -55,7 +55,7 @@ def main():
 
     # Status of Incidents
     plt.figure(figsize=(8, 6))
-    df['STATUS'].value_counts().count().plot(kind='barh', color='lightcoral')
+    df['STATUS'].value_counts().plot(kind='barh', color='lightcoral')
     plt.title('Status of Incidents')
     plt.xlabel('Number of cases')
     plt.subplots_adjust(left=0.2, bottom=0.1)
