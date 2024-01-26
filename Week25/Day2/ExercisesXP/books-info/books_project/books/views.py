@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from models import Book
+from .models import Book
 from django.views.decorators.csrf import csrf_exempt
 
 def test(request):
