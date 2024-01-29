@@ -11,7 +11,8 @@ class CardListView(APIView):
         cards = Card.objects.all()
         print(cards[0])
         serializer = CardSerializer(cards, many=True)
-        return Response(serializer.data)
+        print(type(serializer.data))
+        return Response(data=serializer.data)
 
 
 class CardDetailView(APIView):
