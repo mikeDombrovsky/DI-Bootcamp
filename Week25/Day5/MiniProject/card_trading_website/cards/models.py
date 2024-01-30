@@ -1,5 +1,5 @@
 from django.db import models
-from customusers.models import CustomUser
+from customusers.models import User
 import random
 import uuid
 
@@ -24,6 +24,6 @@ class Card(models.Model):
         default=random_price, max_digits=10, decimal_places=2)
     xp_points = models.IntegerField(default=random_xp_points)
     current_owner = models.ForeignKey(
-        CustomUser, related_name='current_owner_cards', on_delete=models.SET_NULL, null=True, blank=True, default=None)
+        User, related_name='current_owner_cards', on_delete=models.SET_NULL, null=True, blank=True, default=None)
     previous_owner = models.ForeignKey(
-        CustomUser, related_name='previous_owner_cards', on_delete=models.SET_NULL, null=True, blank=True)
+        User, related_name='previous_owner_cards', on_delete=models.SET_NULL, null=True, blank=True)

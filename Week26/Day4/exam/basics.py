@@ -68,7 +68,7 @@ print(combine_words("Hello", "world", second="is", third="great!", first="Python
 # are missing and include a method to display the vehicle’s info. Use dunder method.
 class Vehicle:
     def __init__(self, my_type, brand, year):
-        if not my_type or type(my_type) is not str or not brand or type(brand) is not str or not year or type(year) is not int:
+        if type(my_type) is not str or type(brand) is not str or type(year) is not int:
             raise ValueError('wrong params!')
         self.type = my_type
         self.brand = brand
@@ -76,15 +76,138 @@ class Vehicle:
 
     def __str__(self) -> str:
         return f'Vehicle: type: {self.type}, brand: {self.brand}, year: {self.year}'
-    
+
 
 # v = Vehicle(None, None, None) # error
 v = Vehicle('mytype', 'tesla', 2023)
 print(v)  # Vehicle: type: mytype, brand: tesla, year: 2023
 
 
-## 5. OOP Inheritance and Decorators
+# 5. OOP Inheritance and Decorators
 
-# Create a class Car with string attributes brand, model, and integer attribute mileage. 
+# Create a class Car with string attributes brand, model, and integer attribute mileage.
 # Implement a method to return the car’s details.
-4
+class Car:
+    def __init__(self, brand, model, milage) -> None:
+        if type(brand) is not str or type(model) is not str or type(milage) is not int:
+            raise ValueError('wrong params!')
+        self.brand = brand
+        self.model = model
+        self.milage = milage
+
+    def __str__(self) -> str:
+        return f'{self.__class__.__name__}: brand: {self.brand}, model: {self.model}, milage: {self.milage}'
+
+
+car = Car('tesla', 's', 50000)
+print(car)  # Car: brand: tesla, model: s, milage: 50000
+
+
+# Create a subclass ElectricCar inheriting from Car with an additional
+# float private attribute __battery_capacity.
+# Override the car’s details method to include the battery capacity.
+# Use the @property decorator to get the battery_capacity value and
+# @battery_capacity.setter to modify the battery capacity only if the new value is positive.
+class ElectricCar(Car):
+    def __init__(self, brand, model, milage, battery_capacity) -> None:
+        if type(battery_capacity) is not int:
+            raise ValueError('wrong params!')
+        super().__init__(brand, model, milage)
+        self._battery_capacity = battery_capacity
+
+    @property
+    def battery_capacity(self):
+        return self._battery_capacity
+
+    @battery_capacity.setter
+    def battery_capacity(self, value):
+        if not value or value <= 0:
+            raise ValueError('battery capacity can not be negative')
+        self._battery_capacity = value
+
+    def __str__(self) -> str:
+        return super().__str__() + f', battery_capacity: {self._battery_capacity} KWh'
+
+
+car = ElectricCar('tesla', 's', 50000, 100)
+print(car)
+
+
+# Create a BankAccount class with private float attribute _balance and
+# private string attribute _account_holder.
+# Implement methods to deposit, withdraw, and view the balance.
+# Include a class method to track accounts created and a static method
+# for a bank policy message. Ensure the balance is non-negative.
+class BankAccount:
+    _accounts = []
+
+    def __init__(self, balance, holder) -> None:
+        if type(balance) is not float or balance < 0:
+            raise ValueError('wrong params!')
+        self._balance = balance
+        self._account_holder = holder
+        BankAccount._accounts.append(self)
+
+    def deposit(self, amount):
+        if type(amount) not in [float, int] or amount < 0:
+            raise ValueError('wrong params!')
+        self._balance += round(amount, 2)
+        
+    def withdraw(self, amount):
+        if type(amount) not in [float, int] or amount < 0:
+            raise ValueError('wrong params!')
+        if self._balance < amount:
+            raise ValueError('wrong params! You cannot take more then your balance')
+        self._balance -= round(amount, 2)
+            
+    def view(self):
+        print(f'Balance: ${self._balance}') 
+        
+       
+    @classmethod
+    def get_accounts(cls):
+        return cls._accounts
+
+    @staticmethod
+    def get_bank_policy_message():
+        return 'Bank policy: give me your money, douche bag'
+
+
+## 6. Data Science
+# Numpy and Pandas Visualization
+
+# Create a numpy array of shape (3,3) filled with integers from 1 to 9 using arange().
+import numpy as np
+print(np.arange(1, 10).reshape(3, 3))
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({'A': [1, 'apple', 3, 4, 'banana'], 'B': [5, 6, 7, 8, 9]})
+
+# Replace non-numeric values in column “A” with the mean of numeric values. Plot a histogram of the “A” column using matplotlib.
+print(df)
+# Convert 'A' column to numeric, coerce errors to replace non-numeric values with NaN
+df['A'] = pd.to_numeric(df['A'], errors='coerce')
+print(df)
+# Replace NaN values with the mean of numeric values
+mean_A = df['A'].mean()
+df['A'].fillna(mean_A, inplace=True)
+print(df)
+# Plot a histogram of the 'A' column
+plt.hist(df['A'], bins=10, edgecolor='black')
+plt.xlabel('Column A')
+plt.ylabel('Frequency')
+plt.title('Histogram of Column A')
+plt.show()
+
+# Plot “A” and “B” columns of df using matplotlib. Add x-axis, y-axis labels, and a title.
+plt.plot(df['A'], label='Column A')
+plt.plot(df['B'], label='Column B')
+
+plt.xlabel('Index')
+plt.ylabel('Values')
+plt.title('Plot of Columns A and B')
+plt.legend()
+plt.show()
