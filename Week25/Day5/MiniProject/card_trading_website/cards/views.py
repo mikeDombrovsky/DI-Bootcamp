@@ -4,15 +4,18 @@ from rest_framework.views import APIView
 
 from .models import Card
 from .serializers import CardSerializer
-
+from rest_framework.permissions import AllowAny
 
 class CardListView(APIView):
+    
+    permission_classes = (AllowAny,)
+    
     def get(self, request):
         cards = Card.objects.all()
         print(cards[0])
         serializer = CardSerializer(cards, many=True)
         print(type(serializer.data))
-        return Response(data=serializer.data)
+        return Response(serializer.data)
 
 
 class CardDetailView(APIView):
