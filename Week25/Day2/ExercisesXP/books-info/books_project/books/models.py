@@ -9,7 +9,7 @@ class Book(models.Model):
     published_date = models.DateField(blank=False)
     description = models.TextField(blank=False)
     page_count = models.PositiveIntegerField(validators=[MinValueValidator(1)])
-    categories = models.CharField()
+    categories = models.CharField(blank=False)
     thumbnail_url = models.URLField()
 
 
@@ -20,4 +20,4 @@ class BookReview(models.Model):
     rating = models.PositiveIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)])
     review_text = models.TextField(
-        blank=False, validators=[MinLengthValidator(4)])
+        blank=False, validators=[MinLengthValidator(10)])
