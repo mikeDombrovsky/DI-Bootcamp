@@ -17,12 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from students.views import student_list, student_detail
+from students.views import student_list, student_detail, api_overview
 
 urlpatterns = [
     # question - should we remove this admin path if we use rest framework?
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+    path('', api_overview),
     path('api/students', student_list),
     path('api/students/<int:pk>', student_detail),
 ]
