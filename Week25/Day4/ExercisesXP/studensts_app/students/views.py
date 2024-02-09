@@ -32,9 +32,7 @@ def student_list(request):
         queryset = Student.objects.all()
 
         if date_joined_param:
-            print(date_joined_param)
             date = parse(date_joined_param)
-            print(date.year, date.month, date.day)
             queryset = Student.objects.filter(
                 date_joined__year=date.year
             ).filter(date_joined__month=date.month
