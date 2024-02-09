@@ -20,6 +20,7 @@ class Card(models.Model):
     image_url = models.URLField()
     date_of_birth = models.DateField(null=True)
     patronus = models.CharField(max_length=255)
+    for_sale = models.BooleanField(default=True)
     price = models.DecimalField(
         default=random_price, max_digits=10, decimal_places=2)
     xp_points = models.IntegerField(default=random_xp_points)
